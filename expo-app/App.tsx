@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import { adder } from '@web/utilities/adder'
+import { adder } from '@web/utilities/adder'
 
 export default function App() {
 
-  // console.log(adder(1, 2))
+  console.log(adder(1, 2))
 
   return (
     <View style={styles.container}>
