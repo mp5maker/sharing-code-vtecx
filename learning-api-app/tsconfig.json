@@ -15,7 +15,11 @@
             "es6",
             "dom"
         ],
-        "jsx": "react"
+        "jsx": "react",
+        "baseUrl": ".",
+        "paths": {
+            "@learning/*": ["src/*"]
+        }
     },
     "include": [
         "./src/**/*"

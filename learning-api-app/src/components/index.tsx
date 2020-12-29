@@ -1,4 +1,5 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { App } from "@learning/components/app"
 
-ReactDOM.render(<div>Hello vte.cx!</div>, document.getElementById('container'))
+ReactDOM.render(<App />, document.getElementById("container"));
