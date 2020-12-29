@@ -2,24 +2,31 @@ import { createMuiTheme } from "@material-ui/core/styles";
 
 export const helpers = {
   center: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
   spaceBetween: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
   },
   inline: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center'
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center"
   }
-}
+};
 
-export const createTheme: any = (props: any) => createMuiTheme(props)
+export const spacing = {
+  extraSmall: 8,
+  small: 16,
+  medium: 24,
+  large: 32,
+  extraLarge: 40
+};
 
+export const createTheme: any = (props: any) => createMuiTheme(props);
 
 export const light = createTheme({
   breakpoints: {
@@ -114,7 +121,7 @@ export const light = createTheme({
     divider: "rgba(0, 0, 0, 0.12)",
     background: {
       paper: "#fff",
-      default: "#fff",
+      default: "#fff"
     },
     action: {
       active: "rgba(0, 0, 0, 0.54)",
@@ -289,7 +296,8 @@ export const light = createTheme({
     snackbar: 1400,
     tooltip: 1500
   },
-  helpers
+  helpers,
+  spacing
 });
 
 export const dark = createTheme({
@@ -380,12 +388,12 @@ export const dark = createTheme({
       primary: "#fff",
       secondary: "rgba(255, 255, 255, 0.7)",
       disabled: "rgba(255, 255, 255, 0.5)",
-      hint: "rgba(255, 255, 255, 0.5)",
+      hint: "rgba(255, 255, 255, 0.5)"
     },
     divider: "rgba(255, 255, 255, 0.12)",
     background: {
       paper: "#424242",
-      default: "#121212",
+      default: "#121212"
     },
     action: {
       active: "#fff",
@@ -560,5 +568,6 @@ export const dark = createTheme({
     snackbar: 1400,
     tooltip: 1500
   },
-  helpers
+  helpers,
+  spacing
 });
