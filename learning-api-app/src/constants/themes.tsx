@@ -1,6 +1,27 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-export const light = createMuiTheme({
+export const helpers = {
+  center: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  spaceBetween: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  inline: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center'
+  }
+}
+
+export const createTheme: any = (props: any) => createMuiTheme(props)
+
+
+export const light = createTheme({
   breakpoints: {
     keys: ["xs", "sm", "md", "lg", "xl"],
     values: {
@@ -268,9 +289,10 @@ export const light = createMuiTheme({
     snackbar: 1400,
     tooltip: 1500
   },
+  helpers
 });
 
-export const dark = createMuiTheme({
+export const dark = createTheme({
   breakpoints: {
     keys: ["xs", "sm", "md", "lg", "xl"],
     values: {
@@ -538,4 +560,5 @@ export const dark = createMuiTheme({
     snackbar: 1400,
     tooltip: 1500
   },
+  helpers
 });
