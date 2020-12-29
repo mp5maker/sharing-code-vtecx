@@ -15,8 +15,6 @@ export const Box: React.FC<BoxPropsInterface> = ({ style, helper, ...props }): J
     ...(style ? style : {})
   }
 
-  console.log(styleProps)
-
   return (
     <MaterialBox
       style={styleProps}

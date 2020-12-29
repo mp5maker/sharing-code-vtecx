@@ -19,7 +19,8 @@
         "baseUrl": ".",
         "paths": {
             "@learning/*": ["src/*"]
-        }
+        },
+        "resolveJsonModule": true
     },
     "include": [
         "./src/**/*"
