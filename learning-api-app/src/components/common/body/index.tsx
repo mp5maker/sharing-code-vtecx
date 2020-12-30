@@ -5,6 +5,12 @@ import { useTheme } from "@learning/components/hooks/useTheme";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Box, BoxPropsInterface } from "@learning/components/common/box";
 import { useTranslation } from "react-i18next";
+import { Search } from "@learning/components/common/search";
+import {
+  Section,
+  Article,
+  SubArticle
+} from "@learning/components/common/templates/sidebar";
 
 interface BodyPropsInterface extends BoxPropsInterface {
   documentation?: boolean;
@@ -43,13 +49,33 @@ export const Body: React.FC<BodyPropsInterface> = ({
         </NavBar>
         <Box helper={"container"}>
           <Box
-            style={{
-              padding: theme.spacing(3)
-            }}
             className={"sidebar-container"}
             component={"aside"}
             helper="sidebar"
           >
+            <Box
+              style={{
+                paddingLeft: theme.spacing(1),
+                paddingRight: theme.spacing(1),
+                marginTop: theme.spacing(2),
+                marginBottom: theme.spacing(2)
+              }}
+            >
+              <Search
+                name={"search"}
+                autoComplete={"off"}
+                placeholder={t("SEARCH")}
+                onChange={(event: any) => {
+                  console.log(event);
+                }}
+              />
+            </Box>
+            <Section>
+              <Article href={"#fundamentals"}>{t("FUNDAMENTALS")}</Article>
+              <SubArticle href={"#getting-started"}>
+                {t("GETTING_STARTED")}
+              </SubArticle>
+            </Section>
             {aside}
           </Box>
           <Box

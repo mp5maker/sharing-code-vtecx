@@ -1,23 +1,52 @@
 import * as React from "react";
 import { Body } from "@learning/components/common/body";
 import { Text } from "@learning/components/common/text";
-// import { useTranslation } from "react-i18next";
-// import { useTheme } from "@learning/components/hooks/useTheme";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "@learning/components/hooks/useTheme";
+import { Box } from '@learning/components/common/box'
+import * as ReactMarkdown from 'react-markdown'
+// @ts-ignore
+import GettingStarted from '@learning/markdowns/en/getting-started.md'
+// @ts-ignore
+import Prerequisities from "@learning/markdowns/en/prerequisites.md";
+// @ts-ignore
+import Installation from "@learning/markdowns/en/installation.md";
 
 export const Home = (): JSX.Element => {
-  // const { t } = useTranslation();
-  // const { theme } = useTheme();
+  const { t } = useTranslation();
+  const { theme } = useTheme();
 
   return (
-    <Body
-      aside={(
+    <Body aside={<></>}>
+      <Box id={"getting-started"}>
+        <Text variant={"h4"}>{t("GETTING_STARTED")}</Text>
         <Text>
-            sidebar
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={GettingStarted}
+          />
         </Text>
-      )}>
-      <Text>
-          main
-      </Text>
+      </Box>
+      <Box marginTop={theme.spacing(1)} id={"prerequisites"}>
+        <Text variant={"h4"}>{t("PRE_REQUISITES")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={Prerequisities} />
+        </Text>
+      </Box>
+      <Box marginTop={theme.spacing(1)} id={"installation"}>
+        <Text variant={"h4"}>{t("INSTALLATION")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={Installation}
+          />
+        </Text>
+      </Box>
     </Body>
   );
 };

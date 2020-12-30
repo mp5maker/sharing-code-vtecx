@@ -1,28 +1,23 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "sourceMap": true,
-        "noImplicitAny": true,
-        "strictNullChecks": true,
-        "noImplicitThis": true,
-        "noImplicitReturns": false,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "module": "commonjs",
-        "target": "es5",
-        "lib": [
-            "es5",
-            "es6",
-            "dom"
-        ],
-        "jsx": "react",
-        "baseUrl": ".",
-        "paths": {
-            "@learning/*": ["src/*"]
-        },
-        "resolveJsonModule": true
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "es6", "dom"],
+    "jsx": "react",
+    "baseUrl": ".",
+    "extensions": ["*.js", "*.jsx", "*.ts", "*.tsx", "*.md"],
+    "paths": {
+      "@learning/*": ["src/*"]
     },
-    "include": [
-        "./src/**/*"
-    ]
+    "resolveJsonModule": true
+  },
+  "include": ["./src/**/*"]
 }

@@ -2,6 +2,7 @@ const path = require('path')
 const vtecxutil = require('vtecxutil')
 const writeFilePlugin = require('write-file-webpack-plugin')
 const confy = require('confy')
+const marked = require('marked')
 
 module.exports = (env, argv) => {
   let target
@@ -23,61 +24,81 @@ module.exports = (env, argv) => {
     target = target.substr(target.length - 1) === '/' ? target.substr(0, target.length - 1) : target
   }
   return {
-    mode: argv.mode ? 'development' : 'production',
-    entry: './src' + env.entry,
+    mode: argv.mode ? "development" : "production",
+    entry: "./src" + env.entry,
     output: {
-      filename: '.' + env.entry.replace(/(\.tsx)|(\.ts)/g, '.js')
+      filename: "." + env.entry.replace(/(\.tsx)|(\.ts)/g, ".js")
     },
     module: {
       rules: [
         {
+          test: /\.md$/,
+          use: [
+            {
+              loader: "html-loader",
+              options: {
+                esModule: true
+              }
+            },
+            {
+              loader: "markdown-loader",
+              options: {
+                pedantic: true,
+                renderer: new marked.Renderer()
+              }
+            }
+          ],
+        },
+        {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader']
+          use: ["style-loader", "css-loader"]
         },
         {
           test: /\.(png|gif|svg|ttf|woff|woff2|eot)$/,
-          use: { loader: 'url-loader', options: { limit: 100000 } }
+          use: { loader: "url-loader", options: { limit: 100000 } }
         },
         {
           test: /\.(jpg)$/,
-          use: { loader: 'file-loader', options: { name: '[name].[ext]' } }
+          use: { loader: "file-loader", options: { name: "[name].[ext]" } }
         },
         {
           test: /\.tsx?$/,
-          use: { loader: 'ts-loader' }
+          use: { loader: "ts-loader" }
         },
         {
-          enforce: 'pre',
+          enforce: "pre",
           test: /\.js$/,
-          use: { loader: 'source-map-loader' },
+          use: { loader: "source-map-loader" },
           exclude: /node_modules/
         }
       ]
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js'],
+      extensions: [".ts", ".tsx", ".js"],
       alias: {
-        "@learning": path.resolve(__dirname, 'src/')
+        "@learning": path.resolve(__dirname, "src/")
       }
     },
     devServer: {
-      host: 'localhost',
+      host: "localhost",
       port: 8000,
-      proxy: [{ context: ['/d', '/s', '/xls'], target: target, changeOrigin: true }]
+      proxy: [
+        { context: ["/d", "/s", "/xls"], target: target, changeOrigin: true }
+      ]
     },
     externals:
-      env.externals === 'true'
+      env.externals === "true"
         ? {
-            react: 'React',
-            'react-dom': 'ReactDOM',
-            'react-bootstrap': 'ReactBootstrap',
-            axios: 'axios'
+            react: "React",
+            "react-dom": "ReactDOM",
+            "react-bootstrap": "ReactBootstrap",
+            axios: "axios"
           }
         : {},
     plugins:
-      argv.mode === 'production'
+      argv.mode === "production"
         ? [new vtecxutil.uploaderPlugin(env.entry)]
         : [new writeFilePlugin(), new vtecxutil.uploaderPlugin(env.entry)],
-    devtool: argv.mode === 'production' ? '' : 'source-map'
-  }
+    devtool: argv.mode === "production" ? "" : "source-map"
+  };
 }

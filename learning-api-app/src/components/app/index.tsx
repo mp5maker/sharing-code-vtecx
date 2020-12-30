@@ -9,10 +9,9 @@ export const App: React.FC<{}> = () => {
     <>
       <Router history={history}>
         <Switch>
-          <Route exact={true} component={Home} path={Routes.HOME.path} />
-          <Route exact={true} component={Home} path={Routes.HOME.alternatePath} />
+          <Route component={Home} path={Routes.HOME.path} />
+          <Route component={Home} path={Routes.HOME.alternatePath} />
           <Route
-            exact={true}
             component={Home}
             path={Routes.HOME.anotherPath}
           />
