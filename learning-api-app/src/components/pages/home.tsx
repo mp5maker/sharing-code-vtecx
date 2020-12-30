@@ -3,10 +3,11 @@ import { Body } from "@learning/components/common/body";
 import { Text } from "@learning/components/common/text";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@learning/components/hooks/useTheme";
-import { Box } from '@learning/components/common/box'
-import * as ReactMarkdown from 'react-markdown'
+import { Box } from "@learning/components/common/box";
+import { Code } from "@learning/components/common/code";
+import ReactMarkdown from "react-markdown";
 // @ts-ignore
-import GettingStarted from '@learning/markdowns/en/getting-started.md'
+import GettingStarted from "@learning/markdowns/en/getting-started.md";
 // @ts-ignore
 import Prerequisities from "@learning/markdowns/en/prerequisites.md";
 // @ts-ignore
@@ -34,18 +35,21 @@ export const Home = (): JSX.Element => {
           <ReactMarkdown
             plugins={[]}
             allowDangerousHtml
-            children={Prerequisities} />
+            children={Prerequisities}
+          />
         </Text>
       </Box>
       <Box marginTop={theme.spacing(1)} id={"installation"}>
         <Text variant={"h4"}>{t("INSTALLATION")}</Text>
-        <Text>
-          <ReactMarkdown
-            plugins={[]}
-            allowDangerousHtml
-            children={Installation}
-          />
-        </Text>
+        <Code
+          type={"bash"}
+        >
+          <Text className={"token function"}>mkdir</Text> [your-project-folder]
+          <Box component={'br'} />
+          <Text className={"token function"}>cd</Text> [your-project-folder]
+          <Box component={'br'} />
+          <Text className={"token function"}>npm install</Text> create-vtecx-app
+        </Code>
       </Box>
     </Body>
   );

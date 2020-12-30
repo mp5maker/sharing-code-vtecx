@@ -1,4 +1,9 @@
 {
   "VTECX": "Vtecx",
-  "SEARCH": "Search"
+  "SEARCH": "Search",
+  "FUNDAMENTALS": "Fundamentals",
+  "GETTING_STARTED": "Getting Started",
+  "PRE_REQUISITES": "Pre-Requisites",
+  "INSTALLATION": "Installation",
+  "FIG_1_INSTALLATION": "Fig 1: Installation"
 }

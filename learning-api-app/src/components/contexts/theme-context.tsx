@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ThemeProvider as MaterialThemeProvider } from '@material-ui/core/styles'
 import  { light, dark } from '@learning/constants/themes'
-import { THEME_DARK } from '@learning/constants/settings'
+import { THEME_LIGHT, THEME_DARK } from '@learning/constants/settings'
 
 interface ThemeContextPropsInterface {
     themes: any,
@@ -13,7 +13,7 @@ interface ThemeContextPropsInterface {
 export const ThemeContext = React.createContext<Partial<ThemeContextPropsInterface>>({})
 
 export const ThemeProvider = ({ children }: any): JSX.Element => {
-    const [currentThemeKey, setCurrentThemeKey] = React.useState<'light'|'dark'>(THEME_DARK)
+    const [currentThemeKey, setCurrentThemeKey] = React.useState<'light'|'dark'>(THEME_LIGHT)
     const theme = currentThemeKey == THEME_DARK ? dark : light
 
     return (

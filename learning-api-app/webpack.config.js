@@ -47,7 +47,7 @@ module.exports = (env, argv) => {
                 renderer: new marked.Renderer()
               }
             }
-          ],
+          ]
         },
         {
           test: /\.css$/,
@@ -58,7 +58,7 @@ module.exports = (env, argv) => {
           use: { loader: "url-loader", options: { limit: 100000 } }
         },
         {
-          test: /\.(jpg)$/,
+          test: /\.(png|jpe?g|gif)$/i,
           use: { loader: "file-loader", options: { name: "[name].[ext]" } }
         },
         {

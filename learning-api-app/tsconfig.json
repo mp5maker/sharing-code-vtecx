@@ -13,11 +13,11 @@
     "lib": ["es5", "es6", "dom"],
     "jsx": "react",
     "baseUrl": ".",
-    "extensions": ["*.js", "*.jsx", "*.ts", "*.tsx", "*.md"],
     "paths": {
       "@learning/*": ["src/*"]
     },
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   },
   "include": ["./src/**/*"]
 }

@@ -1,4 +1,9 @@
 {
   "VTECX": "Vtecx",
-  "SEARCH": "探す"
+  "SEARCH": "探す",
+  "FUNDAMENTALS": "ファンダメンタルズ",
+  "GETTING_STARTED": "ファンダメンタルズ",
+  "PRE_REQUISITES": "前提条件",
+  "INSTALLATION": "インストール",
+  "FIG_1_INSTALLATION": "図1：インストール"
 }
