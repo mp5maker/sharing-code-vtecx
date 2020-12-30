@@ -41,14 +41,15 @@ export const Home = (): JSX.Element => {
       </Box>
       <Box marginTop={theme.spacing(1)} id={"installation"}>
         <Text variant={"h4"}>{t("INSTALLATION")}</Text>
-        <Code
-          type={"bash"}
-        >
-          <Text className={"token function"}>mkdir</Text> [your-project-folder]
-          <Box component={'br'} />
-          <Text className={"token function"}>cd</Text> [your-project-folder]
-          <Box component={'br'} />
+        <Code type={"bash"}>
           <Text className={"token function"}>npm install</Text> create-vtecx-app
+          <Box component={"br"} />
+          <Text className={"token function"}>npx create-vtecx-app </Text>{" "}
+          [your-project-folder]
+          <Box component={"br"} />
+          <Text className={"token function"}>cd </Text> [your-project-folder]
+          <Box component={"br"} />
+          <Text className={"token function"}>npm </Text> install
         </Code>
       </Box>
     </Body>
