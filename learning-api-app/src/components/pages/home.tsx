@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { NavBar } from "@learning/components/common/nav-bar";
 import { useTheme } from '@learning/components/hooks/useTheme'
 
-export const Home: React.FC<{}> = (): JSX.Element => {
+export const Home = (): JSX.Element => {
   const { t } = useTranslation()
   const { theme } = useTheme()
 

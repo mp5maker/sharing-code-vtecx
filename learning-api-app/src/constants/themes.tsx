@@ -18,14 +18,6 @@ export const helpers = {
   }
 };
 
-export const spacing = {
-  extraSmall: 8,
-  small: 16,
-  medium: 24,
-  large: 32,
-  extraLarge: 40
-};
-
 export const createTheme: any = (props: any) => createMuiTheme(props);
 
 export const light = createTheme({
@@ -297,7 +289,6 @@ export const light = createTheme({
     tooltip: 1500
   },
   helpers,
-  spacing
 });
 
 export const dark = createTheme({
@@ -569,5 +560,4 @@ export const dark = createTheme({
     tooltip: 1500
   },
   helpers,
-  spacing
 });
