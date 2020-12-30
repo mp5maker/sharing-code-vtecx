@@ -44,12 +44,11 @@ export const Home = (): JSX.Element => {
         <Code type={"bash"}>
           <Text className={"token function"}>npm install</Text> create-vtecx-app
           <Box component={"br"} />
-          <Text className={"token function"}>npx create-vtecx-app </Text>{" "}
-          [your-project-folder]
+          <Text className={"token function"}>npx create-vtecx-app </Text>[your-project-folder]
           <Box component={"br"} />
-          <Text className={"token function"}>cd </Text> [your-project-folder]
+          <Text className={"token function"}>cd </Text>[your-project-folder]
           <Box component={"br"} />
-          <Text className={"token function"}>npm </Text> install
+          <Text className={"token function"}>npm </Text>install
         </Code>
       </Box>
     </Body>

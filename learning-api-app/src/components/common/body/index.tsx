@@ -75,6 +75,12 @@ export const Body: React.FC<BodyPropsInterface> = ({
               <SubArticle href={"#getting-started"}>
                 {t("GETTING_STARTED")}
               </SubArticle>
+              <SubArticle href={"#prerequisites"}>
+                {t("PRE_REQUISITES")}
+              </SubArticle>
+              <SubArticle href={"#installation"}>
+                {t("INSTALLATION")}
+              </SubArticle>
             </Section>
             {aside}
           </Box>

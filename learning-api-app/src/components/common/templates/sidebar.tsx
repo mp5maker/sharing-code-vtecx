@@ -27,9 +27,12 @@ export const Article: React.FC<LinkPropsInterface> = ({
   const { theme }: any = useTheme();
 
   return (
-    <Box>
+    <Box
+      style={{
+        width: '100%'
+      }}>
       <Link
-        variant={'body1'}
+        variant={'h6'}
         style={{
           paddingLeft: theme.spacing(1),
           paddingRight: theme.spacing(1)
@@ -49,9 +52,14 @@ export const SubArticle: React.FC<LinkPropsInterface> = ({
   const { theme }: any = useTheme();
 
   return (
-    <Box>
+    <Box
+      style={{
+        width: '100%',
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1),
+      }}>
       <Link
-        variant={"body2"}
+        variant={"body1"}
         style={{
           paddingLeft: theme.spacing(2),
           paddingRight: theme.spacing(2)
