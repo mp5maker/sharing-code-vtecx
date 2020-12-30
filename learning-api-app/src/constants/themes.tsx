@@ -15,6 +15,26 @@ export const helpers = {
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center"
+  },
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    height: "calc(100vh -  60px)",
+    position: "relative"
+  },
+  sidebar: {
+    position: "relative",
+    willChange: "scroll-position",
+    height: "auto",
+    width: "300px",
+    overflow: "auto"
+  },
+  main: {
+    position: "relative",
+    willChange: "scroll-position",
+    height: "auto",
+    width: "100%",
+    overflow: "auto"
   }
 };
 
@@ -288,7 +308,7 @@ export const light = createTheme({
     snackbar: 1400,
     tooltip: 1500
   },
-  helpers,
+  helpers
 });
 
 export const dark = createTheme({
@@ -559,5 +579,5 @@ export const dark = createTheme({
     snackbar: 1400,
     tooltip: 1500
   },
-  helpers,
+  helpers
 });

@@ -2,8 +2,8 @@ import * as React from "react";
 import MaterialBox, { BoxProps } from "@material-ui/core/Box";
 import { useTheme } from '@learning/components/hooks/useTheme'
 
-interface BoxPropsInterface extends BoxProps {
-  helper?: 'center' | 'inline' | 'spaceBetween'
+export interface BoxPropsInterface extends BoxProps {
+  helper?: 'center' | 'inline' | 'spaceBetween' | 'container' | 'sidebar' | 'main'
 }
 
 export const Box: React.FC<BoxPropsInterface> = ({ style, helper, ...props }): JSX.Element => {
