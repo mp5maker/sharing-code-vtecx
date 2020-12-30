@@ -32,7 +32,7 @@ export const Home = (): JSX.Element => {
           <ReactMarkdown
             plugins={[]}
             allowDangerousHtml
-            children={currentMarkdown.Prerequisities}
+            children={currentMarkdown.PreRequisites}
           />
         </Text>
       </Box>
