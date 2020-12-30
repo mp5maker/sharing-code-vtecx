@@ -6,16 +6,13 @@ import { useTheme } from "@learning/components/hooks/useTheme";
 import { Box } from "@learning/components/common/box";
 import { Code } from "@learning/components/common/code";
 import ReactMarkdown from "react-markdown";
-// @ts-ignore
-import GettingStarted from "@learning/markdowns/en/getting-started.md";
-// @ts-ignore
-import Prerequisities from "@learning/markdowns/en/prerequisites.md";
-// @ts-ignore
-import Installation from "@learning/markdowns/en/installation.md";
+import * as Markdowns from "@learning/markdowns"
 
 export const Home = (): JSX.Element => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { theme } = useTheme();
+  // @ts-ignore
+  const currentMarkdown: any = Markdowns.default[i18n.language]
 
   return (
     <Body aside={<></>}>
@@ -25,7 +22,7 @@ export const Home = (): JSX.Element => {
           <ReactMarkdown
             plugins={[]}
             allowDangerousHtml
-            children={GettingStarted}
+            children={currentMarkdown.GettingStarted}
           />
         </Text>
       </Box>
@@ -35,7 +32,7 @@ export const Home = (): JSX.Element => {
           <ReactMarkdown
             plugins={[]}
             allowDangerousHtml
-            children={Prerequisities}
+            children={currentMarkdown.Prerequisities}
           />
         </Text>
       </Box>
@@ -44,12 +41,23 @@ export const Home = (): JSX.Element => {
         <Code type={"bash"}>
           <Text className={"token function"}>npm install</Text> create-vtecx-app
           <Box component={"br"} />
-          <Text className={"token function"}>npx create-vtecx-app </Text>[your-project-folder]
+          <Text className={"token function"}>npx create-vtecx-app </Text>
+          [your-project-folder]
           <Box component={"br"} />
           <Text className={"token function"}>cd </Text>[your-project-folder]
           <Box component={"br"} />
           <Text className={"token function"}>npm </Text>install
         </Code>
+      </Box>
+      <Box marginTop={theme.spacing(1)} id={"registering-with-vtecx"}>
+        <Text variant={"h4"}>{t("REGISTER_WITH_VTECX")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.RegisterWithVtecx}
+          />
+        </Text>
       </Box>
     </Body>
   );
