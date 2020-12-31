@@ -59,14 +59,32 @@ export const Body: React.FC<BodyPropsInterface> = ({
                   i18n.changeLanguage(LANGUAGE_ENGLISH);
                 }}
               >
-                <Text>EN</Text>
+                <Text
+                  style={{
+                    color:
+                      i18n.language == LANGUAGE_ENGLISH
+                        ? theme.palette.info.main
+                        : theme.palette.text.main
+                  }}
+                >
+                  EN
+                </Text>
               </IconButton>
               <IconButton
                 onClick={() => {
                   i18n.changeLanguage(LANGUAGE_JAPANESE);
                 }}
               >
-                <Text>JA</Text>
+                <Text
+                  style={{
+                    color:
+                      i18n.language == LANGUAGE_JAPANESE
+                        ? theme.palette.info.main
+                        : theme.palette.text.main
+                  }}
+                >
+                  JA
+                </Text>
               </IconButton>
             </Box>
           </Toolbar>
@@ -77,9 +95,7 @@ export const Body: React.FC<BodyPropsInterface> = ({
             component={"aside"}
             helper="sidebar"
           >
-            <Sidebar>
-            {aside}
-            </Sidebar>
+            <Sidebar>{aside}</Sidebar>
           </Box>
           <Box
             style={{
