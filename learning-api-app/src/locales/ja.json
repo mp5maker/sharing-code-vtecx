@@ -9,5 +9,6 @@
   "REGISTER_WITH_VTECX": "vtecxに登録する",
   "LOGIN_WITH_VTECX": "vtecxでログイン",
   "CREATE_SERVICE": "サービスを作成する",
-  "FUNDAMENTALS_SUMMARY": "ファンダメンタルズサマリー"
+  "FUNDAMENTALS_SUMMARY": "ファンダメンタルズサマリー",
+  "CREATING_AN_API": "APIの作成"
 }

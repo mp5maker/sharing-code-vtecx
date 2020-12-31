@@ -6,17 +6,18 @@ import { useTheme } from "@learning/components/hooks/useTheme";
 import { Box } from "@learning/components/common/box";
 import { Code } from "@learning/components/common/code";
 import ReactMarkdown from "react-markdown";
-import * as Markdowns from "@learning/markdowns"
-import { Picture } from '@learning/components/common/Picture'
+import * as Markdowns from "@learning/markdowns";
+import { Picture } from "@learning/components/common/Picture";
+import { FolderAcls } from "@learning/components/snippets/folder-acls";
 
 export const Home = (): JSX.Element => {
   const { t, i18n } = useTranslation();
   const { theme } = useTheme();
   // @ts-ignore
-  const currentMarkdown: any = Markdowns.default[i18n.language]
+  const currentMarkdown: any = Markdowns.default[i18n.language];
 
-  return (
-    <Body documentation={true} aside={<></>}>
+  const GettingStartedContent = (
+    <>
       <Box id={"getting-started"}>
         <Text variant={"h4"}>{t("GETTING_STARTED")}</Text>
         <Text>
@@ -123,6 +124,32 @@ export const Home = (): JSX.Element => {
           />
         </Text>
       </Box>
+    </>
+  );
+
+  const CreatingAnApiContent = (
+    <>
+      <Box id={"services"} marginTop={theme.spacing(2)}>
+        <Text variant={"h4"}>{t("CREATING_AN_API")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.CreateSchema}
+          />
+        </Text>
+        <Picture src={"img/create-endpoint.png"} />
+        <Code caption={"setup/_settings/folderacls.json"} type="javascript">
+          {FolderAcls}
+        </Code>
+      </Box>
+    </>
+  );
+
+  return (
+    <Body documentation={true} aside={<></>}>
+      {GettingStartedContent}
+      {CreatingAnApiContent}
     </Body>
   );
 };

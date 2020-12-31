@@ -9,5 +9,7 @@
   "REGISTER_WITH_VTECX": "Register with vtecx",
   "LOGIN_WITH_VTECX": "Login with vtecx",
   "CREATE_SERVICE": "Create Service",
-  "FUNDAMENTALS_SUMMARY": "Summary"
+  "FUNDAMENTALS_SUMMARY": "Summary",
+  "CREATING_AN_API": "Creating An Api",
+  "CREATE_SCHEMA": "Create Schema"
 }

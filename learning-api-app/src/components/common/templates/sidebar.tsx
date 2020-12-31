@@ -26,7 +26,7 @@ export const Section: React.FC<{}> = ({ children, ...props }): JSX.Element => {
 };
 
 interface ArticlePropsInterface extends LinkPropsInterface {
-  isActive?: boolean
+  isActive?: boolean;
 }
 export const Article: React.FC<ArticlePropsInterface> = ({
   children,
@@ -84,8 +84,9 @@ export const SubArticle: React.FC<LinkPropsInterface> = ({
 };
 
 const ARTICLES: any = {
-  fundamentals: false
-}
+  fundamentals: false,
+  creatingAnApi: false
+};
 
 interface SidebarPropsInterface {
   aside?: JSX.Element | JSX.Element[] | string;
@@ -100,8 +101,95 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
   const { t } = useTranslation();
 
   const [showSubArticles, setShowSubArticles] = React.useState<any>({
+    ...ARTICLES,
     fundamentals: true
-  })
+  });
+
+  const SearchContent = (
+    <Box
+      style={{
+        paddingLeft: theme.spacing(1),
+        paddingRight: theme.spacing(1),
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2)
+      }}
+    >
+      <Search
+        name={"search"}
+        autoComplete={"off"}
+        placeholder={t("SEARCH")}
+        onChange={(event: any) => {
+          console.log(event);
+        }}
+      />
+    </Box>
+  );
+
+  const FundamentalsContent = (
+    <Section>
+      <Article
+        onClick={() =>
+          setShowSubArticles({
+            ...ARTICLES,
+            fundamentals: !showSubArticles.fundamentals
+          })
+        }
+        isActive={showSubArticles.fundamentals}
+        href={"#fundamentals"}
+      >
+        {t("FUNDAMENTALS")}
+      </Article>
+      {showSubArticles.fundamentals ? (
+        <>
+          <SubArticle href={"#getting-started"}>
+            {t("GETTING_STARTED")}
+          </SubArticle>
+          <SubArticle href={"#prerequisites"}>{t("PRE_REQUISITES")}</SubArticle>
+          <SubArticle href={"#installation"}>{t("INSTALLATION")}</SubArticle>
+          <SubArticle href={"#register-with-vtecx"}>
+            {t("REGISTER_WITH_VTECX")}
+          </SubArticle>
+          <SubArticle href={"#login-with-vtecx"}>
+            {t("LOGIN_WITH_VTECX")}
+          </SubArticle>
+          <SubArticle href={"#create-service"}>
+            {t("CREATE_SERVICE")}
+          </SubArticle>
+          <SubArticle href={"#fundamentals-summary"}>
+            {t("FUNDAMENTALS_SUMMARY")}
+          </SubArticle>
+        </>
+      ) : (
+        <></>
+      )}
+    </Section>
+  );
+
+  const CreatingAnApiContent = (
+    <Section>
+      <Article
+        onClick={() =>
+          setShowSubArticles({
+            ...ARTICLES,
+            creatingAnApi: !showSubArticles.creatingAnApi
+          })
+        }
+        isActive={showSubArticles.creatingAnApi}
+        href={"#creating-an-api"}
+      >
+        {t("CREATING_AN_API")}
+      </Article>
+      {showSubArticles.creatingAnApi ? (
+        <>
+          <SubArticle href={"#create-schema"}>
+            {t("CREATE_SCHEMA")}
+          </SubArticle>
+        </>
+      ) : (
+        <></>
+      )}
+    </Section>
+  );
 
   return (
     <Box {...props}>
@@ -129,59 +217,9 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
           component={"aside"}
           helper="sidebar"
         >
-          <Box
-            style={{
-              paddingLeft: theme.spacing(1),
-              paddingRight: theme.spacing(1),
-              marginTop: theme.spacing(2),
-              marginBottom: theme.spacing(2)
-            }}
-          >
-            <Search
-              name={"search"}
-              autoComplete={"off"}
-              placeholder={t("SEARCH")}
-              onChange={(event: any) => {
-                console.log(event);
-              }}
-            />
-          </Box>
-          <Section>
-            <Article
-              onClick={() => setShowSubArticles({
-                ...ARTICLES,
-                fundamentals: !showSubArticles.fundamentals
-              })}
-              isActive={showSubArticles.fundamentals}
-              href={"#fundamentals"}>
-              {t("FUNDAMENTALS")}
-            </Article>
-            {
-              showSubArticles.fundamentals ? (
-                <>
-                  <SubArticle href={"#getting-started"}>
-                    {t("GETTING_STARTED")}
-                  </SubArticle>
-                  <SubArticle href={"#prerequisites"}>
-                    {t("PRE_REQUISITES")}
-                  </SubArticle>
-                  <SubArticle href={"#installation"}>{t("INSTALLATION")}</SubArticle>
-                  <SubArticle href={"#register-with-vtecx"}>
-                    {t("REGISTER_WITH_VTECX")}
-                  </SubArticle>
-                  <SubArticle href={"#login-with-vtecx"}>
-                    {t("LOGIN_WITH_VTECX")}
-                  </SubArticle>
-                  <SubArticle href={"#create-service"}>
-                    {t("CREATE_SERVICE")}
-                  </SubArticle>
-                  <SubArticle href={"#fundamentals-summary"}>
-                    {t("FUNDAMENTALS_SUMMARY")}
-                  </SubArticle>
-                </>
-              ) : <></>
-            }
-          </Section>
+          {SearchContent}
+          {FundamentalsContent}
+          {CreatingAnApiContent}
           {aside}
         </Box>
         <Box
