@@ -5,5 +5,9 @@
   "GETTING_STARTED": "Getting Started",
   "PRE_REQUISITES": "Pre-Requisites",
   "INSTALLATION": "Installation",
-  "FIG_1_INSTALLATION": "Fig 1: Installation"
+  "FIG_1_INSTALLATION": "Fig 1: Installation",
+  "REGISTER_WITH_VTECX": "Register with vtecx",
+  "LOGIN_WITH_VTECX": "Login with vtecx",
+  "CREATE_SERVICE": "Create Service",
+  "FUNDAMENTALS_SUMMARY": "Summary"
 }

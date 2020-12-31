@@ -1,0 +1,2 @@
+First signup with with vtecxapi, after signing up we would go through the details of creating new endpoints and apis.
+Use your email address and password and a confirmation email will be sent to your email address.
