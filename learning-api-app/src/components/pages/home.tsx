@@ -9,6 +9,9 @@ import ReactMarkdown from "react-markdown";
 import * as Markdowns from "@learning/markdowns";
 import { Picture } from "@learning/components/common/Picture";
 import { FolderAcls } from "@learning/components/snippets/folder-acls";
+import { SimplePost } from "@learning/components/snippets/simple-post";
+import { SimpleUpdate } from "@learning/components/snippets/simple-update";
+import { SimpleDelete } from "@learning/components/snippets/simple-delete";
 import { Link } from "@learning/components/common/Link";
 
 export const Home = (): JSX.Element => {
@@ -202,10 +205,44 @@ export const Home = (): JSX.Element => {
     </>
   );
 
+  const PerformCrudContent = (
+    <Box id={"perform-crud"} marginTop={theme.spacing(2)}>
+      <Text variant={"h4"}>{t("PERFORM_CRUD")}</Text>
+      <Text>
+        <ReactMarkdown
+          plugins={[]}
+          allowDangerousHtml
+          children={currentMarkdown.PerformCrud}
+        />
+      </Text>
+      <Code type={"javascript"}>
+        <Text className={"token function"}>
+          http://localhost:8000/d/users?x&f
+        </Text>
+      </Code>
+      <Box marginTop={theme.spacing(1)} id={"crud-create"}>
+        <Text variant={"h4"}>{t("CREATE")}</Text>
+        <Code type="javascript">{SimplePost}</Code>
+      </Box>
+      <Box marginTop={theme.spacing(1)} id={"crud-update"}>
+        <Text variant={"h4"}>{t("UPDATE")}</Text>
+        <Code type="javascript">{SimpleUpdate}</Code>
+      </Box>
+      <Box marginTop={theme.spacing(1)} id={"crud-delete"}>
+        <Text variant={"h4"}>{t("DELETE")}</Text>
+        <Code type="javascript">{SimpleDelete}</Code>
+      </Box>
+      <Box marginTop={theme.spacing(1)} id={"crud-read"}>
+        <Text variant={"h4"}>{t("READ")}</Text>
+      </Box>
+    </Box>
+  );
+
   return (
     <Body documentation={true} aside={<></>}>
       {GettingStartedContent}
       {CreatingAnApiContent}
+      {PerformCrudContent}
     </Body>
   );
 };

@@ -15,5 +15,10 @@
   "ENTRY_SCHEMA_MANAGEMENT": "Entry Schema Management",
   "TOP_SCHEMA": "Top Schema",
   "SUB_SCHEMA": "Sub Schema",
-  "SUMMARY": "Summary"
+  "SUMMARY": "Summary",
+  "PERFORM_CRUD": "Perform CRUD",
+  "CREATE": "Create",
+  "UPDATE": "Update",
+  "DELETE": "Delete",
+  "READ": "Read"
 }

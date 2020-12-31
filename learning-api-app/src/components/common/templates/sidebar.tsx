@@ -85,7 +85,8 @@ export const SubArticle: React.FC<LinkPropsInterface> = ({
 
 const ARTICLES: any = {
   fundamentals: false,
-  creatingAnApi: false
+  creatingAnApi: false,
+  performCrud: false
 };
 
 interface SidebarPropsInterface {
@@ -181,12 +182,37 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
       </Article>
       {showSubArticles.creatingAnApi ? (
         <>
-          <SubArticle href={"#create-schema"}>
-            {t("CREATE_SCHEMA")}
-          </SubArticle>
+          <SubArticle href={"#create-schema"}>{t("CREATE_SCHEMA")}</SubArticle>
           <SubArticle href={"#create-an-api-summary"}>
             {t("SUMMARY")}
           </SubArticle>
+        </>
+      ) : (
+        <></>
+      )}
+    </Section>
+  );
+
+  const PerformCrudContent = (
+    <Section>
+      <Article
+        onClick={() =>
+          setShowSubArticles({
+            ...ARTICLES,
+            performCrud: !showSubArticles.performCrud
+          })
+        }
+        isActive={showSubArticles.performCrud}
+        href={"#perform-crud"}
+      >
+        {t("PERFORM_CRUD")}
+      </Article>
+      {showSubArticles.performCrud ? (
+        <>
+          <SubArticle href={"#crud-create"}>{t("CREATE")}</SubArticle>
+          <SubArticle href={"#crud-update"}>{t("UPDATE")}</SubArticle>
+          <SubArticle href={"#crud-delete"}>{t("DELETE")}</SubArticle>
+          <SubArticle href={"#crud-read"}>{t("READ")}</SubArticle>
         </>
       ) : (
         <></>
@@ -223,6 +249,7 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
           {SearchContent}
           {FundamentalsContent}
           {CreatingAnApiContent}
+          {PerformCrudContent}
           {aside}
         </Box>
         <Box

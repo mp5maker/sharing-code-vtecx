@@ -15,5 +15,10 @@
   "ENTRY_SCHEMA_MANAGEMENT": "エントリスキーマ管理",
   "TOP_SCHEMA": "トップスキーマ",
   "SUB_SCHEMA": "サブスキーマ",
-  "SUMMARY": "概要"
+  "SUMMARY": "概要",
+  "PERFORM_CRUD": "Crudを実行する",
+  "CREATE": "Create",
+  "UPDATE": "Update",
+  "DELETE": "Delete",
+  "READ": "Read"
 }
