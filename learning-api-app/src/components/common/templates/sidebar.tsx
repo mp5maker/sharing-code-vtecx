@@ -3,9 +3,6 @@ import { useTheme } from "@learning/components/hooks/useTheme";
 import { Box } from "@learning/components/common/box";
 import { Link, LinkPropsInterface } from "@learning/components/common/Link";
 import { useTranslation } from "react-i18next";
-import { Text } from "@learning/components/common/text";
-import { NavBar } from "@learning/components/common/nav-bar";
-import Toolbar from "@material-ui/core/Toolbar";
 import { Search } from "@learning/components/common/search";
 
 export const Section: React.FC<{}> = ({ children, ...props }): JSX.Element => {
@@ -87,20 +84,16 @@ const ARTICLES: any = {
   fundamentals: false,
   creatingAnApi: false,
   performCrud: false,
-  additionalResources: false,
+  additionalResources: false
 };
 
-interface SidebarPropsInterface {
-  aside?: JSX.Element | JSX.Element[] | string;
-}
+interface SidebarPropsInterface {}
 
 export const Sidebar: React.FC<SidebarPropsInterface> = ({
-  aside,
-  children,
-  ...props
+  children
 }) => {
   const { theme } = useTheme();
-  const { t } = useTranslation();
+  const { t  } = useTranslation();
 
   const [showSubArticles, setShowSubArticles] = React.useState<any>({
     ...ARTICLES,
@@ -246,49 +239,13 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
   );
 
   return (
-    <Box {...props}>
-      <NavBar
-        style={{
-          minHeight: 60,
-          padding: theme.spacing.small
-        }}
-        position={"sticky"}
-      >
-        <Toolbar
-          variant={"dense"}
-          style={{
-            minHeight: 60
-          }}
-        >
-          <Text color={"inherit"} variant={"h5"}>
-            {t("VTECX")}
-          </Text>
-        </Toolbar>
-      </NavBar>
-      <Box helper={"container"}>
-        <Box
-          className={"sidebar-container"}
-          component={"aside"}
-          helper="sidebar"
-        >
-          {SearchContent}
-          {FundamentalsContent}
-          {CreatingAnApiContent}
-          {PerformCrudContent}
-          {AdditionalResourcesContent}
-          {aside}
-        </Box>
-        <Box
-          style={{
-            padding: theme.spacing(3)
-          }}
-          className={"main-container"}
-          component={"main"}
-          helper={"main"}
-        >
-          {children}
-        </Box>
-      </Box>
-    </Box>
+    <>
+      {SearchContent}
+      {FundamentalsContent}
+      {CreatingAnApiContent}
+      {PerformCrudContent}
+      {AdditionalResourcesContent}
+      {children}
+    </>
   );
 };

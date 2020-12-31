@@ -241,7 +241,7 @@ export const Home = (): JSX.Element => {
   const AdditionalResourcesContent = (
     <Box id={"additional-resources"} marginTop={2}>
       <Text variant={"h4"}>{t("ADDITIONAL_RESOURCES")}</Text>
-      <Box>
+      <Box id={"medium-links"} marginTop={2}>
         <Link
           target={"__blank"}
           variant={"body1"}

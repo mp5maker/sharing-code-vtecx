@@ -26,7 +26,7 @@ export const helpers = {
     position: "relative",
     willChange: "scroll-position",
     height: "auto",
-    width: "300px",
+    width: "350px",
     overflow: "auto"
   },
   main: {
