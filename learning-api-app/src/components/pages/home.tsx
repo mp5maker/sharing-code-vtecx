@@ -238,11 +238,58 @@ export const Home = (): JSX.Element => {
     </Box>
   );
 
+  const AdditionalResourcesContent = (
+    <Box id={"additional-resources"} marginTop={2}>
+      <Text variant={"h4"}>{t("ADDITIONAL_RESOURCES")}</Text>
+      <Box>
+        <Link
+          target={"__blank"}
+          variant={"body1"}
+          href="https://khan-photon.medium.com/create-a-simple-progressive-web-app-pwa-1685519acef7"
+          download
+        >
+          {t("CREATE_A_SIMPLE_PWA_APP")}
+        </Link>
+      </Box>
+      <Box>
+        <Link
+          target={"__blank"}
+          variant={"body1"}
+          href="https://khan-photon.medium.com/add-custom-install-banner-progressive-web-app-9c3b07f89481"
+          download
+        >
+          {t("ADD_CUSTOM_INSTALL_BANNER")}
+        </Link>
+      </Box>
+      <Box>
+        <Link
+          target={"__blank"}
+          variant={"body1"}
+          href="https://khan-photon.medium.com/pwa-using-vtecx-9fcb12ba2a24"
+          download
+        >
+          {t("PWA_APP_USING_VTECX")}
+        </Link>
+      </Box>
+      <Box>
+        <Link
+          target={"__blank"}
+          variant={"body1"}
+          href="https://khan-photon.medium.com/sharing-codes-between-react-web-app-and-react-native-expo-app-2887e437d55"
+          download
+        >
+          {t("SHARING_CODE_FROM_WEB_APP_TO_NATIVE_APP")}
+        </Link>
+      </Box>
+    </Box>
+  );
+
   return (
     <Body documentation={true} aside={<></>}>
       {GettingStartedContent}
       {CreatingAnApiContent}
       {PerformCrudContent}
+      {AdditionalResourcesContent}
     </Body>
   );
 };

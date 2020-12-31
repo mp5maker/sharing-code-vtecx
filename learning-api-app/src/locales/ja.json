@@ -20,5 +20,10 @@
   "CREATE": "Create",
   "UPDATE": "Update",
   "DELETE": "Delete",
-  "READ": "Read"
+  "READ": "Read",
+  "ADDITIONAL_RESOURCES": "追加のリソース",
+  "CREATE_A_SIMPLE_PWA_APP": "シンプルなpwaアプリを作成する",
+  "ADD_CUSTOM_INSTALL_BANNER": "カスタムインストールバナーを追加する",
+  "PWA_APP_USING_VTECX": "vtecxを使用したpwaアプリ",
+  "SHARING_CODE_FROM_WEB_APP_TO_NATIVE_APP": "Webアプリからネイティブアプリへのコードの共有"
 }

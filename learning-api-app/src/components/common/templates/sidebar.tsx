@@ -86,7 +86,8 @@ export const SubArticle: React.FC<LinkPropsInterface> = ({
 const ARTICLES: any = {
   fundamentals: false,
   creatingAnApi: false,
-  performCrud: false
+  performCrud: false,
+  additionalResources: false,
 };
 
 interface SidebarPropsInterface {
@@ -220,6 +221,30 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
     </Section>
   );
 
+  const AdditionalResourcesContent = (
+    <Section>
+      <Article
+        onClick={() =>
+          setShowSubArticles({
+            ...ARTICLES,
+            additionalResources: !showSubArticles.performCrud
+          })
+        }
+        isActive={showSubArticles.additionalResources}
+        href={"#additional-resources"}
+      >
+        {t("ADDITIONAL_RESOURCES")}
+      </Article>
+      {showSubArticles.additionalResources ? (
+        <>
+          <SubArticle href={"#medium-links"}>{t("MEDIUM_LINK")}</SubArticle>
+        </>
+      ) : (
+        <></>
+      )}
+    </Section>
+  );
+
   return (
     <Box {...props}>
       <NavBar
@@ -250,6 +275,7 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
           {FundamentalsContent}
           {CreatingAnApiContent}
           {PerformCrudContent}
+          {AdditionalResourcesContent}
           {aside}
         </Box>
         <Box

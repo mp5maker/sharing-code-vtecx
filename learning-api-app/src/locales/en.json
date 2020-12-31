@@ -20,5 +20,10 @@
   "CREATE": "Create",
   "UPDATE": "Update",
   "DELETE": "Delete",
-  "READ": "Read"
+  "READ": "Read",
+  "ADDITIONAL_RESOURCES": "Additional Resources",
+  "CREATE_A_SIMPLE_PWA_APP": "Create a simple PWA App",
+  "ADD_CUSTOM_INSTALL_BANNER": "Add Custom Install Banner",
+  "PWA_APP_USING_VTECX": "Pwa App using Vtecx",
+  "SHARING_CODE_FROM_WEB_APP_TO_NATIVE_APP": "Sharing code from web app to native app"
 }
