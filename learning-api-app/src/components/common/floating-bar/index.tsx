@@ -14,7 +14,11 @@ export const FloatingBar: React.FC<FloatingBarPropsInterface> = (): JSX.Element 
       style={{
         position: "fixed",
         bottom: 25,
-        right: 25
+        right: 25,
+        minWidth: 100,
+        padding: theme.spacing(1),
+        borderRadius: theme.shape.borderRadius,
+        boxShadow: theme.shadows[3]
       }}
     >
       <Box helper={"spaceBetween"}>
