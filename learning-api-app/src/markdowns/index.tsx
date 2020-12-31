@@ -18,6 +18,8 @@ import ENGLISH_FUNDAMENTALS_SUMMARY from "@learning/markdowns/en/fundamentals-su
 import ENGLISH_CREATE_SCHEMA from "@learning/markdowns/en/create-schema.md"
 // @ts-ignore
 import ENGLISH_UPLOAD_SAMPLE_DATA from "@learning/markdowns/en/upload-sample-data.md"
+// @ts-ignoreOAD
+import ENGLISH_CREATE_AN_API_SUMMARY from "@learning/markdowns/en/create-an-api-summary.md"
 
 export default {
   en: {
@@ -30,7 +32,8 @@ export default {
     AfterServeIndexLogin: ENGLISH_AFTER_SERVE_INDEX_LOGIN,
     FundamentalsSummary: ENGLISH_FUNDAMENTALS_SUMMARY,
     CreateSchema: ENGLISH_CREATE_SCHEMA,
-    UploadSampleData: ENGLISH_UPLOAD_SAMPLE_DATA
+    UploadSampleData: ENGLISH_UPLOAD_SAMPLE_DATA,
+    CreateAnApiSummary: ENGLISH_CREATE_AN_API_SUMMARY
   },
   ja: {
     GettingStarted: ENGLISH_GETTING_STARTED,
@@ -42,6 +45,7 @@ export default {
     AfterServeIndexLogin: ENGLISH_AFTER_SERVE_INDEX_LOGIN,
     FundamentalsSummary: ENGLISH_FUNDAMENTALS_SUMMARY,
     CreateSchema: ENGLISH_CREATE_SCHEMA,
-    UploadSampleData: ENGLISH_UPLOAD_SAMPLE_DATA
+    UploadSampleData: ENGLISH_UPLOAD_SAMPLE_DATA,
+    CreateAnApiSummary: ENGLISH_CREATE_AN_API_SUMMARY
   }
 };

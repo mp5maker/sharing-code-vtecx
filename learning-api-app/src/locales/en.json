@@ -14,5 +14,6 @@
   "CREATE_SCHEMA": "Create Schema",
   "ENTRY_SCHEMA_MANAGEMENT": "Entry Schema Management",
   "TOP_SCHEMA": "Top Schema",
-  "SUB_SCHEMA": "Sub Schema"
+  "SUB_SCHEMA": "Sub Schema",
+  "SUMMARY": "Summary"
 }

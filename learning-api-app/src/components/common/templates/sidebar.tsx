@@ -184,6 +184,9 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
           <SubArticle href={"#create-schema"}>
             {t("CREATE_SCHEMA")}
           </SubArticle>
+          <SubArticle href={"#create-an-api-summary"}>
+            {t("SUMMARY")}
+          </SubArticle>
         </>
       ) : (
         <></>
