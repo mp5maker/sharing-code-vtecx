@@ -11,5 +11,6 @@
   "CREATE_SERVICE": "Create Service",
   "FUNDAMENTALS_SUMMARY": "Summary",
   "CREATING_AN_API": "Creating An Api",
-  "CREATE_SCHEMA": "Create Schema"
+  "CREATE_SCHEMA": "Create Schema",
+  "ENTRY_SCHEMA_MANAGEMENT": "Entry Schema Management"
 }

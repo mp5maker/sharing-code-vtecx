@@ -129,19 +129,44 @@ export const Home = (): JSX.Element => {
 
   const CreatingAnApiContent = (
     <>
-      <Box id={"services"} marginTop={theme.spacing(2)}>
+      <Box id={"creating-an-api"} marginTop={theme.spacing(2)}>
         <Text variant={"h4"}>{t("CREATING_AN_API")}</Text>
-        <Text>
-          <ReactMarkdown
-            plugins={[]}
-            allowDangerousHtml
-            children={currentMarkdown.CreateSchema}
-          />
-        </Text>
-        <Picture src={"img/create-endpoint.png"} />
-        <Code caption={"setup/_settings/folderacls.json"} type="javascript">
-          {FolderAcls}
-        </Code>
+        <Box id={'create-schema'}>
+          <Text>
+            <ReactMarkdown
+              plugins={[]}
+              allowDangerousHtml
+              children={currentMarkdown.CreateSchema}
+            />
+          </Text>
+          <Picture src={"img/create-endpoint.png"} />
+          <Code type={"bash"}>
+            <Text className={"token function"}>npm run</Text> download:folderacls
+            <br />
+          </Code>
+          <Code caption={"setup/_settings/folderacls.json"} type="javascript">
+            {FolderAcls}
+          </Code>
+          <Text
+            style={{
+              marginTop: theme.spacing(2)
+            }}
+          >
+            {t("ENTRY_SCHEMA_MANAGEMENT")}
+          </Text>
+          <Box marginTop={1}>
+            <Picture
+              src={"img/top-schema.png"}
+              caption={t("TOP_SCHEMA") as string}
+            />
+          </Box>
+          <Box marginTop={1}>
+            <Picture
+              src={"img/sub-schema.png"}
+              caption={t("SUB_SCHEMA") as string}
+            />
+          </Box>
+        </Box>
       </Box>
     </>
   );

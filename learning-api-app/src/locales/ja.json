@@ -10,5 +10,7 @@
   "LOGIN_WITH_VTECX": "vtecxでログイン",
   "CREATE_SERVICE": "サービスを作成する",
   "FUNDAMENTALS_SUMMARY": "ファンダメンタルズサマリー",
-  "CREATING_AN_API": "APIの作成"
+  "CREATING_AN_API": "APIの作成",
+  "CREATE_SCHEMA": "スキーマを作成する",
+  "ENTRY_SCHEMA_MANAGEMENT": "エントリスキーマ管理"
 }
