@@ -12,5 +12,7 @@
   "FUNDAMENTALS_SUMMARY": "Summary",
   "CREATING_AN_API": "Creating An Api",
   "CREATE_SCHEMA": "Create Schema",
-  "ENTRY_SCHEMA_MANAGEMENT": "Entry Schema Management"
+  "ENTRY_SCHEMA_MANAGEMENT": "Entry Schema Management",
+  "TOP_SCHEMA": "Top Schema",
+  "SUB_SCHEMA": "Sub Schema"
 }

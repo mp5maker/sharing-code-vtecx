@@ -12,5 +12,7 @@
   "FUNDAMENTALS_SUMMARY": "ファンダメンタルズサマリー",
   "CREATING_AN_API": "APIの作成",
   "CREATE_SCHEMA": "スキーマを作成する",
-  "ENTRY_SCHEMA_MANAGEMENT": "エントリスキーマ管理"
+  "ENTRY_SCHEMA_MANAGEMENT": "エントリスキーマ管理",
+  "TOP_SCHEMA": "トップスキーマ",
+  "SUB_SCHEMA": "サブスキーマ"
 }

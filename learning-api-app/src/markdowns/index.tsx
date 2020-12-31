@@ -16,6 +16,8 @@ import ENGLISH_AFTER_SERVE_INDEX_LOGIN from "@learning/markdowns/en/after-serve-
 import ENGLISH_FUNDAMENTALS_SUMMARY from "@learning/markdowns/en/fundamentals-summary.md"
 // @ts-ignore
 import ENGLISH_CREATE_SCHEMA from "@learning/markdowns/en/create-schema.md"
+// @ts-ignore
+import ENGLISH_UPLOAD_SAMPLE_DATA from "@learning/markdowns/en/upload-sample-data.md"
 
 export default {
   en: {
@@ -27,7 +29,8 @@ export default {
     LoginThroughTerminal: ENGLISH_LOGIN_THROUGH_TERMINAL,
     AfterServeIndexLogin: ENGLISH_AFTER_SERVE_INDEX_LOGIN,
     FundamentalsSummary: ENGLISH_FUNDAMENTALS_SUMMARY,
-    CreateSchema: ENGLISH_CREATE_SCHEMA
+    CreateSchema: ENGLISH_CREATE_SCHEMA,
+    UploadSampleData: ENGLISH_UPLOAD_SAMPLE_DATA
   },
   ja: {
     GettingStarted: ENGLISH_GETTING_STARTED,
@@ -38,6 +41,7 @@ export default {
     LoginThroughTerminal: ENGLISH_LOGIN_THROUGH_TERMINAL,
     AfterServeIndexLogin: ENGLISH_AFTER_SERVE_INDEX_LOGIN,
     FundamentalsSummary: ENGLISH_FUNDAMENTALS_SUMMARY,
-    CreateSchema: ENGLISH_CREATE_SCHEMA
+    CreateSchema: ENGLISH_CREATE_SCHEMA,
+    UploadSampleData: ENGLISH_UPLOAD_SAMPLE_DATA
   }
 };

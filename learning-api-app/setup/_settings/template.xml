@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<feed>
 <entry>
-<content type="text/html">
-</content>
+  <content type="text/html">user
+ name
+ japanese_name
+ email
+ gender
+ company_name
+ job_title
+ age
+ country
+ yoga
+ description
+company_name</content>
   <contributor>
     <uri>urn:vte.cx:acl:/_group/$admin,CRUD</uri>
   </contributor>
@@ -12,3 +23,55 @@
   <rights>
 </rights>
 </entry>
+<entry>
+  <link href="/_settings/template_property" rel="self"/>
+</entry>
+  <entry>
+    <link href="/_settings/template_property/company_name" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.age" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.company_name" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.country" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.description" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.email" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.gender" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.japanese_name" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.job_title" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.name" rel="self"/>
+    <title></title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.yoga" rel="self"/>
+    <title></title>
+  </entry>
+</feed>

@@ -9,6 +9,7 @@ import ReactMarkdown from "react-markdown";
 import * as Markdowns from "@learning/markdowns";
 import { Picture } from "@learning/components/common/Picture";
 import { FolderAcls } from "@learning/components/snippets/folder-acls";
+import { Link } from "@learning/components/common/Link";
 
 export const Home = (): JSX.Element => {
   const { t, i18n } = useTranslation();
@@ -131,7 +132,7 @@ export const Home = (): JSX.Element => {
     <>
       <Box id={"creating-an-api"} marginTop={theme.spacing(2)}>
         <Text variant={"h4"}>{t("CREATING_AN_API")}</Text>
-        <Box id={'create-schema'}>
+        <Box id={"create-schema"}>
           <Text>
             <ReactMarkdown
               plugins={[]}
@@ -141,7 +142,8 @@ export const Home = (): JSX.Element => {
           </Text>
           <Picture src={"img/create-endpoint.png"} />
           <Code type={"bash"}>
-            <Text className={"token function"}>npm run</Text> download:folderacls
+            <Text className={"token function"}>npm run</Text>{" "}
+            download:folderacls
             <br />
           </Code>
           <Code caption={"setup/_settings/folderacls.json"} type="javascript">
@@ -166,6 +168,22 @@ export const Home = (): JSX.Element => {
               caption={t("SUB_SCHEMA") as string}
             />
           </Box>
+          <Code type={"bash"} caption={"setup/settings/_template.xml"}>
+            <Text className={"token function"}>npm run</Text> download:template
+          </Code>
+          <Code type={"bash"} caption={"src/typings/index.d.ts"}>
+            <Text className={"token function"}>npm run</Text> download:typings
+          </Code>
+          <Text>
+            <ReactMarkdown
+              plugins={[]}
+              allowDangerousHtml
+              children={currentMarkdown.UploadSampleData}
+            />
+          </Text>
+          <Link variant={'body1'} href="downloads/sample.json" download>
+            sample.json
+          </Link>
         </Box>
       </Box>
     </>
