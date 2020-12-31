@@ -11,6 +11,7 @@ import {
   LANGUAGE_JAPANESE
 } from "@learning/constants/settings";
 import { Sidebar } from "@learning/components/common/templates/sidebar";
+import { FloatingBar } from '@learning/components/common/floating-bar'
 
 interface BodyPropsInterface extends BoxPropsInterface {
   documentation?: boolean;
@@ -108,6 +109,7 @@ export const Body: React.FC<BodyPropsInterface> = ({
             {children}
           </Box>
         </Box>
+        <FloatingBar />
       </Box>
     );
   }
