@@ -55,20 +55,36 @@ export const Code: React.FC<CodePropsInterface> = ({
       style={{
         margin: 0,
         height: "100%",
-        position: "relative"
+        position: "relative",
+        color: theme.palette.text.primary,
+        backgroundColor: theme.palette.background.default
       }}
     >
-      <Box component={"pre"}>
+      <Box
+        style={{
+          backgroundColor: theme.palette.background.default
+        }}
+        component={"pre"}
+      >
         {React.Children.map(children, item => {
           const className = get(item, "props.className", "");
           const innerChildren = get(item, "props.children", "");
 
           return (
-            <Box component={"code"} className={`language-${type} ${className}`}>
+            <Box
+              style={{
+                backgroundColor: theme.palette.background.default
+              }}
+              component={"code"}
+              className={`language-${type} ${className}`}
+            >
               {React.Children.count(innerChildren) > 1
                 ? React.Children.map(innerChildren, innerItem => {
                     return (
                       <Box
+                        style={{
+                          backgroundColor: theme.palette.background.default
+                        }}
                         component={"code"}
                         className={`language-${type} ${className}`}
                       >
@@ -82,14 +98,19 @@ export const Code: React.FC<CodePropsInterface> = ({
         })}
       </Box>
       {caption ? (
-        <Box component={"figcaption"}>
+        <Box
+          style={{
+            backgroundColor: theme.palette.background.default
+          }}
+          component={"figcaption"}
+          padding={1}
+        >
           <Text variant={"body2"}>{caption}</Text>
         </Box>
       ) : (
         <></>
       )}
-      {
-        type == 'javascript' ? (
+      {type == "javascript" ? (
         <IconButton
           onClick={onCopy}
           style={{
@@ -110,8 +131,9 @@ export const Code: React.FC<CodePropsInterface> = ({
         >
           <Text variant={"body2"}>{clicked ? t("COPIED") : t("COPY")}</Text>
         </IconButton>
-        ) : <></>
-      }
+      ) : (
+        <></>
+      )}
     </Box>
   );
 };

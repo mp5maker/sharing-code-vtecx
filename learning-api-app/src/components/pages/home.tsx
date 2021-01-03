@@ -251,7 +251,7 @@ export const Home = (): JSX.Element => {
           children={currentMarkdown.PerformCrud}
         />
       </Text>
-      <Code type={"javascript"}>
+      <Code type={"bash"}>
         <Text className={"token function"}>
           http://localhost:8000/d/users?x&f
         </Text>
@@ -389,14 +389,14 @@ export const Home = (): JSX.Element => {
   );
 
   const AdditionalResourcesContent = (
-    <Box id={"additional-resources"} marginTop={2}>
+    <Box id={"additional-resources"} marginTop={5}>
       <Text variant={"h4"}>{t("ADDITIONAL_RESOURCES")}</Text>
       <Box id={"medium-links"} marginTop={2}>
+        <Text>PWA</Text>
         <Link
           target={"__blank"}
           variant={"body1"}
           href="https://khan-photon.medium.com/create-a-simple-progressive-web-app-pwa-1685519acef7"
-          download
         >
           {t("CREATE_A_SIMPLE_PWA_APP")}
         </Link>
@@ -406,7 +406,6 @@ export const Home = (): JSX.Element => {
           target={"__blank"}
           variant={"body1"}
           href="https://khan-photon.medium.com/add-custom-install-banner-progressive-web-app-9c3b07f89481"
-          download
         >
           {t("ADD_CUSTOM_INSTALL_BANNER")}
         </Link>
@@ -416,19 +415,38 @@ export const Home = (): JSX.Element => {
           target={"__blank"}
           variant={"body1"}
           href="https://khan-photon.medium.com/pwa-using-vtecx-9fcb12ba2a24"
-          download
         >
           {t("PWA_APP_USING_VTECX")}
         </Link>
       </Box>
-      <Box>
+      <Box marginTop={2}>
+        <Text>React Native</Text>
         <Link
           target={"__blank"}
           variant={"body1"}
           href="https://khan-photon.medium.com/sharing-codes-between-react-web-app-and-react-native-expo-app-2887e437d55"
-          download
         >
           {t("SHARING_CODE_FROM_WEB_APP_TO_NATIVE_APP")}
+        </Link>
+      </Box>
+      <Box marginTop={2}>
+        <Text>Big Query</Text>
+        <Link
+          target={"__blank"}
+          variant={"body1"}
+          href="https://logicalant.medium.com/bigquery-implementation-in-vtecx-app-acfabb754e20"
+        >
+          {t("BIG_QUERY")}
+        </Link>
+      </Box>
+      <Box marginTop={2}>
+        <Text>{t("MORE")}</Text>
+        <Link
+          target={"__blank"}
+          variant={"body1"}
+          href="https://khan-photon.medium.com/sharing-codes-between-react-web-app-and-react-native-expo-app-2887e437d55"
+        >
+          https://blog.vte.cx/
         </Link>
       </Box>
     </Box>

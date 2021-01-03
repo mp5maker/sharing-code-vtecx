@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { ThemeProvider as MaterialThemeProvider } from '@material-ui/core/styles'
 import  { light, dark } from '@learning/constants/themes'
-import { THEME_LIGHT, THEME_DARK } from '@learning/constants/settings'
-import { Light } from '@learning/components/common/theme-block/light'
-import { Dark } from '@learning/components/common/theme-block/dark'
+import { THEME_DARK } from '@learning/constants/settings'
+import '@learning/styles/prism.css'
+import { useColor } from '@learning/components/hooks/useColor'
 
 interface ThemeContextPropsInterface {
     themes: any,
@@ -17,6 +17,7 @@ export const ThemeContext = React.createContext<Partial<ThemeContextPropsInterfa
 export const ThemeProvider = ({ children }: any): JSX.Element => {
     const [currentThemeKey, setCurrentThemeKey] = React.useState<'light'|'dark'>(THEME_DARK)
     const theme = currentThemeKey == THEME_DARK ? dark : light
+    useColor({ currentThemeKey })
 
     return (
         <ThemeContext.Provider
@@ -33,7 +34,6 @@ export const ThemeProvider = ({ children }: any): JSX.Element => {
                 theme={theme}>
                 <>
                     { children }
-                    { currentThemeKey === THEME_LIGHT ? <Light /> : <Dark />}
                 </>
             </MaterialThemeProvider>
         </ThemeContext.Provider>
