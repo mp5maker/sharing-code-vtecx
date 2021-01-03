@@ -5,6 +5,7 @@ import { Link } from "@learning/components/common/Link";
 import { Picture } from "@learning/components/common/Picture";
 import { Text } from "@learning/components/common/text";
 import { useTheme } from "@learning/components/hooks/useTheme";
+import { AddUserByAdmin, UserAdmin } from '@learning/components/snippets/access-control-list.tsx';
 import {
   SimpleBigQueryDelete, SimpleBigQueryGet,
   SimpleBigQueryPost,
@@ -409,6 +410,27 @@ export const Home = (): JSX.Element => {
     </Box>
   );
 
+  const AccessControlListContent = (
+    <Box id={"access-control-list"} marginTop={5}>
+      <Text variant={"h4"}>{t("ACCESS_CONTROL_LIST")}</Text>
+      <Box>
+        <Code caption={'who-am-i'}>http://localhost:8000/d/?_whoami&x&f</Code>
+        <Code caption={'uid'}>http://localhost:8000/d/?_uid&x&f</Code>
+        <Code caption={'account'}>http://localhost:8000/d/?_account&x&f</Code>
+        <Code caption={'log-out'}>http://localhost:8000/d/?_logout</Code>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.AddUserByAdmin}
+          />
+          </Text>
+        <Code caption={'add-user-by-admin'} type={'javascript'}>{AddUserByAdmin}</Code>
+        <Code caption={'user-admin'} type={'javascript'}>{UserAdmin}</Code>
+      </Box>
+    </Box>
+  );
+
   const AdditionalResourcesContent = (
     <Box id={"additional-resources"} marginTop={5}>
       <Text variant={"h4"}>{t("ADDITIONAL_RESOURCES")}</Text>
@@ -500,6 +522,7 @@ export const Home = (): JSX.Element => {
       {PerformCrudContent}
       {ServerSideContent}
       {BigQueryContent}
+      {AccessControlListContent}
       {AdditionalResourcesContent}
     </Body>
   );

@@ -34,6 +34,8 @@ import ENGLISH_UPLOAD_PHOTO from "@learning/markdowns/en/upload-photo.md"
 import ENGLISH_BIG_QUERY_INTRO from "@learning/markdowns/en/big-query-intro.md"
 // @ts-ignore
 import ENGLISH_BIG_QUERY_SUMMARY from "@learning/markdowns/en/big-query-summary.md"
+// @ts-ignore
+import ENGLISH_ADD_USER_BY_ADMIN from "@learning/markdowns/en/add-user-by-admin.md"
 
 export default {
   en: {
@@ -54,7 +56,8 @@ export default {
     SimpleDeploy: ENGLISH_SIMPLE_DEPLOY,
     UploadPhoto: ENGLISH_UPLOAD_PHOTO,
     BigQueryIntro: ENGLISH_BIG_QUERY_INTRO,
-    BigQuerySummary: ENGLISH_BIG_QUERY_SUMMARY
+    BigQuerySummary: ENGLISH_BIG_QUERY_SUMMARY,
+    AddUserByAdmin: ENGLISH_ADD_USER_BY_ADMIN
   },
   ja: {
     GettingStarted: ENGLISH_GETTING_STARTED,
@@ -75,5 +78,6 @@ export default {
     UploadPhoto: ENGLISH_UPLOAD_PHOTO,
     BigQueryIntro: ENGLISH_BIG_QUERY_INTRO,
     BigQuerySummary: ENGLISH_BIG_QUERY_SUMMARY,
+    AddUserByAdmin: ENGLISH_ADD_USER_BY_ADMIN
   }
 };

@@ -44,5 +44,6 @@
   "COPIED": "Copied",
   "MORE": "More",
   "SEND_EMAIL": "Send Email",
-  "CREATE_PDF": "Create PDF"
+  "CREATE_PDF": "Create PDF",
+  "ACCESS_CONTROL_LIST": "Access Control List"
 }

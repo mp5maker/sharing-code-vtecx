@@ -269,6 +269,30 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
     </Section>
   );
 
+  const AccessControlListContent = (
+    <Section>
+      <Article
+        onClick={() =>
+          setShowSubArticles({
+            ...ARTICLES,
+            accessControlList: !showSubArticles.accessControlList
+          })
+        }
+        isActive={showSubArticles.accessControlList}
+        href={"#access-control-list"}
+      >
+        {t("ACCESS_CONTROL_LIST")}
+      </Article>
+      {showSubArticles.accessControlList ? (
+        <>
+          <SubArticle href={"#access-control-list-description"}>{t("BASIC")}</SubArticle>
+        </>
+      ) : (
+        <></>
+      )}
+    </Section>
+  );
+
   const AdditionalResourcesContent = (
     <Section>
       <Article
@@ -301,6 +325,7 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
       {PerformCrudContent}
       {ServerSideContent}
       {BigQueryContent}
+      {AccessControlListContent}
       {AdditionalResourcesContent}
       {children}
     </>
