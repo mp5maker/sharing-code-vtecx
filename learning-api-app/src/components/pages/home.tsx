@@ -5,7 +5,7 @@ import { Link } from "@learning/components/common/Link";
 import { Picture } from "@learning/components/common/Picture";
 import { Text } from "@learning/components/common/text";
 import { useTheme } from "@learning/components/hooks/useTheme";
-import { AddUserByAdmin, UserAdmin } from '@learning/components/snippets/access-control-list.tsx';
+import { AddUserByAdmin, OneWayToLogin, UserAdmin } from '@learning/components/snippets/access-control-list.tsx';
 import {
   SimpleBigQueryDelete, SimpleBigQueryGet,
   SimpleBigQueryPost,
@@ -13,6 +13,7 @@ import {
 } from "@learning/components/snippets/big-query";
 import { FolderAcls } from "@learning/components/snippets/folder-acls";
 import { PropertiesEmail, PropertiesXML } from "@learning/components/snippets/properties";
+import { Report } from '@learning/components/snippets/report';
 import { SendEmail } from '@learning/components/snippets/send-email';
 import { SimpleDelete } from "@learning/components/snippets/simple-delete";
 import { SimplePost } from "@learning/components/snippets/simple-post";
@@ -22,7 +23,6 @@ import {
 } from "@learning/components/snippets/simple-upload-photo";
 import { SSRHtml } from "@learning/components/snippets/ssr-html";
 import { SSRPDF } from "@learning/components/snippets/ssr-pdf";
-import { Report } from '@learning/components/snippets/report';
 import * as Markdowns from "@learning/markdowns";
 import get from "lodash/get";
 import * as React from "react";
@@ -425,16 +425,21 @@ export const Home = (): JSX.Element => {
         <Code caption={'uid'}>http://localhost:8000/d/?_uid&x&f</Code>
         <Code caption={'account'}>http://localhost:8000/d/?_account&x&f</Code>
         <Code caption={'log-out'}>http://localhost:8000/d/?_logout</Code>
-        <Text>
-          <ReactMarkdown
-            plugins={[]}
-            allowDangerousHtml
-            children={currentMarkdown.AddUserByAdmin}
-          />
-          </Text>
-        <Code caption={'add-user-by-admin'} type={'javascript'}>{AddUserByAdmin}</Code>
-        <Code caption={'user-admin'} type={'javascript'}>{UserAdmin}</Code>
+        <Code caption={'log-in-for-native-devices'}
+          type="javascript">{OneWayToLogin}</Code>
       </Box>
+        <Box id={'user-admin'} marginTop={2}>
+          <Text variant={"h4"}>{t('USER_ADMIN')}</Text>
+          <Text>
+            <ReactMarkdown
+              plugins={[]}
+              allowDangerousHtml
+              children={currentMarkdown.AddUserByAdmin}
+            />
+            </Text>
+          <Code caption={'add-user-by-admin'} type={'javascript'}>{AddUserByAdmin}</Code>
+          <Code caption={'user-admin'} type={'javascript'}>{UserAdmin}</Code>
+        </Box>
     </Box>
   );
 

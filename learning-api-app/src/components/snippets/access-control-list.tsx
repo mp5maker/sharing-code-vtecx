@@ -49,3 +49,40 @@ axios.put(\`/d /\`, requestData)
     .catch(onErrorUserAdmin)
 `;
 
+
+export const OneWayToLogin =
+` const rxid = vtecxauth.getRXID(
+    email,
+    password,
+    serviceName,
+    apiKey
+  );
+
+  const loginWithAccessToken = ({ onSuccessAuth }: any = {}) => {
+    const onSuccessGetAccessToken = (getAccessTokenResponse: any) => {
+        const accessToken = get(getAccessTokenResponse, 'data.feed.title', '')
+    }
+
+    apiHelper.me.getAccessToken()
+        .then(onSuccessGetAccessToken)
+        .catch(() => {})
+  }
+
+  const onSuccessGetCookie = (result: AxiosResponse) => {
+      const hasCookie = get(result, 'headers.set-cookie', '')
+      if (hasCookie) {
+          const cookieFromRequest = result.headers['set-cookie'][0].split(';')[0]
+          loginWithAccessToken({
+              ...(cookieFromRequest ? {
+                  onSuccessAuth: async() => {
+                      await AsyncStorage.setItem(REQUEST_COOKIE, cookieFromRequest)
+                  }
+              }: {})
+          })
+      } else loginWithAccessToken({})
+  }
+
+  apiHelper.me.auth({ rxid })
+    .then(onSuccessGetCookie)
+    .catch(() => {})
+`;

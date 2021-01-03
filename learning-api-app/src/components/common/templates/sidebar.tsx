@@ -286,6 +286,7 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
       {showSubArticles.accessControlList ? (
         <>
           <SubArticle href={"#access-control-list-description"}>{t("BASIC")}</SubArticle>
+          <SubArticle href={"#user-admin"}>{t("USER_ADMIN")}</SubArticle>
         </>
       ) : (
         <></>
