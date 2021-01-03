@@ -30,6 +30,10 @@ import ENGLISH_SERVER_SIDE_JAVASCRIPT_INTRO from "@learning/markdowns/en/server-
 import ENGLISH_SIMPLE_DEPLOY from "@learning/markdowns/en/simple-deploy.md"
 // @ts-ignore
 import ENGLISH_UPLOAD_PHOTO from "@learning/markdowns/en/upload-photo.md"
+// @ts-ignore
+import ENGLISH_BIG_QUERY_INTRO from "@learning/markdowns/en/big-query-intro.md"
+// @ts-ignore
+import ENGLISH_BIG_QUERY_SUMMARY from "@learning/markdowns/en/big-query-summary.md"
 
 export default {
   en: {
@@ -48,7 +52,9 @@ export default {
     SimpleRead: ENGLISH_SIMPLE_READ,
     ServerSideJavascriptIntro: ENGLISH_SERVER_SIDE_JAVASCRIPT_INTRO,
     SimpleDeploy: ENGLISH_SIMPLE_DEPLOY,
-    UploadPhoto: ENGLISH_UPLOAD_PHOTO
+    UploadPhoto: ENGLISH_UPLOAD_PHOTO,
+    BigQueryIntro: ENGLISH_BIG_QUERY_INTRO,
+    BigQuerySummary: ENGLISH_BIG_QUERY_SUMMARY
   },
   ja: {
     GettingStarted: ENGLISH_GETTING_STARTED,
@@ -66,6 +72,8 @@ export default {
     SimpleRead: ENGLISH_SIMPLE_READ,
     ServerSideJavascriptIntro: ENGLISH_SERVER_SIDE_JAVASCRIPT_INTRO,
     SimpleDeploy: ENGLISH_SIMPLE_DEPLOY,
-    UploadPhoto: ENGLISH_UPLOAD_PHOTO
+    UploadPhoto: ENGLISH_UPLOAD_PHOTO,
+    BigQueryIntro: ENGLISH_BIG_QUERY_INTRO,
+    BigQuerySummary: ENGLISH_BIG_QUERY_SUMMARY,
   }
 };

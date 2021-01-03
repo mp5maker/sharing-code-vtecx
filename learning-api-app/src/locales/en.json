@@ -38,5 +38,6 @@
   "SIMPLE_FILTERING_WITH_PAGINATION": "Simple filtering with pagination",
   "SIMPLE_SORTING_WITH_PAGINATION": "Simple sorting with pagination",
   "DEPLOY": "Deploy",
-  "UPLOAD_PHOTO": "Upload Photo"
+  "UPLOAD_PHOTO": "Upload Photo",
+  "BIG_QUERY": "Big Query"
 }

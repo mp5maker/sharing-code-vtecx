@@ -85,16 +85,15 @@ const ARTICLES: any = {
   creatingAnApi: false,
   performCrud: false,
   additionalResources: false,
-  serverSide: false
+  serverSide: false,
+  bigQuery: false
 };
 
 interface SidebarPropsInterface {}
 
-export const Sidebar: React.FC<SidebarPropsInterface> = ({
-  children
-}) => {
+export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const { theme } = useTheme();
-  const { t  } = useTranslation();
+  const { t } = useTranslation();
 
   const [showSubArticles, setShowSubArticles] = React.useState<any>({
     ...ARTICLES,
@@ -232,7 +231,34 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
       {showSubArticles.serverSide ? (
         <>
           <SubArticle href={"#server-side-basics"}>{t("BASICS")}</SubArticle>
-          <SubArticle href={"#simple-upload-photo"}>{t("UPLOAD_PHOTO")}</SubArticle>
+          <SubArticle href={"#simple-upload-photo"}>
+            {t("UPLOAD_PHOTO")}
+          </SubArticle>
+        </>
+      ) : (
+        <></>
+      )}
+    </Section>
+  );
+
+  const BigQueryContent = (
+    <Section>
+      <Article
+        onClick={() =>
+          setShowSubArticles({
+            ...ARTICLES,
+            bigQuery: !showSubArticles.bigQuery
+          })
+        }
+        isActive={showSubArticles.bigQuery}
+        href={"#big-query"}
+      >
+        {t("BIG_QUERY")}
+      </Article>
+      {showSubArticles.bigQuery ? (
+        <>
+          <SubArticle href={"#big-query-intro"}>{t("BIG_QUERY")}</SubArticle>
+          <SubArticle href={"#big-query-summary"}>{t("SUMMARY")}</SubArticle>
         </>
       ) : (
         <></>
@@ -271,6 +297,7 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
       {CreatingAnApiContent}
       {PerformCrudContent}
       {ServerSideContent}
+      {BigQueryContent}
       {AdditionalResourcesContent}
       {children}
     </>

@@ -38,5 +38,6 @@
   "SIMPLE_FILTERING_WITH_PAGINATION": "ページネーションによる単純なフィルタリング",
   "SIMPLE_SORTING_WITH_PAGINATION": "ページネーションによる簡単な並べ替え",
   "DEPLOY": "デプロイ",
-  "UPLOAD_PHOTO": "写真をアップする"
+  "UPLOAD_PHOTO": "写真をアップする",
+  "BIG_QUERY": "BigQuery"
 }

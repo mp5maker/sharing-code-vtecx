@@ -13,27 +13,35 @@ import { SimplePost } from "@learning/components/snippets/simple-post";
 import { SimpleUpdate } from "@learning/components/snippets/simple-update";
 import { SimpleDelete } from "@learning/components/snippets/simple-delete";
 import { SSRHtml } from "@learning/components/snippets/ssr-html";
+import { PropertiesXML } from "@learning/components/snippets/properties";
+import {
+  SimpleBigQueryGet,
+  SimpleBigQueryPost,
+  SimpleBigQueryPut,
+  SimpleBigQueryDelete,
+} from "@learning/components/snippets/big-query";
 import {
   SimpleUploadServerPhoto,
   SimpleUploadClientPhoto
 } from "@learning/components/snippets/simple-upload-photo";
 import { Link } from "@learning/components/common/Link";
-import { useLocation } from 'react-router-dom'
-import get from 'lodash/get'
+import { useLocation } from "react-router-dom";
+import get from "lodash/get";
 
 export const Home = (): JSX.Element => {
   const { t, i18n } = useTranslation();
   const { theme } = useTheme();
-  const location = useLocation()
+  const location = useLocation();
   // @ts-ignore
   const currentMarkdown: any = Markdowns.default[i18n.language];
 
-
   React.useEffect(() => {
-    const hash = get(location, 'hash', '')
-    const element = document.querySelector(hash)
-    if (element) element.scrollIntoView()
-  }, [])
+    const hash = get(location, "hash", "");
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) element.scrollIntoView();
+    }
+  }, []);
 
   const GettingStartedContent = (
     <>
@@ -340,6 +348,46 @@ export const Home = (): JSX.Element => {
     </Box>
   );
 
+  const BigQueryContent = (
+    <Box id={"big-query"} marginTop={theme.spacing(2)}>
+      <Text variant={"h4"}>{t("BIG_QUERY")}</Text>
+      <Box id={"big-query-intro"}>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.BigQueryIntro}
+          />
+        </Text>
+        <Code type={"bash"} caption={"setup/_settings/properties.xml"}>
+          {PropertiesXML}
+        </Code>
+        <Code type={"javascript"} caption={"src/server/get-big-query.tsx"}>
+          {SimpleBigQueryGet}
+        </Code>
+        <Code type={"javascript"} caption={"src/server/post-big-query.tsx"}>
+          {SimpleBigQueryPost}
+        </Code>
+        <Code type={"javascript"} caption={"src/server/put-big-query.tsx"}>
+          {SimpleBigQueryPut}
+        </Code>
+        <Code type={"javascript"} caption={"src/server/delete-big-query.tsx"}>
+          {SimpleBigQueryDelete}
+        </Code>
+      </Box>
+      <Box id={"big-query-summary"}>
+        <Text variant={"h4"}>{t("SUMMARY")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.BigQuerySummary}
+          />
+        </Text>
+      </Box>
+    </Box>
+  );
+
   const AdditionalResourcesContent = (
     <Box id={"additional-resources"} marginTop={2}>
       <Text variant={"h4"}>{t("ADDITIONAL_RESOURCES")}</Text>
@@ -392,6 +440,7 @@ export const Home = (): JSX.Element => {
       {CreatingAnApiContent}
       {PerformCrudContent}
       {ServerSideContent}
+      {BigQueryContent}
       {AdditionalResourcesContent}
     </Body>
   );
