@@ -25,5 +25,17 @@
   "CREATE_A_SIMPLE_PWA_APP": "Create a simple PWA App",
   "ADD_CUSTOM_INSTALL_BANNER": "Add Custom Install Banner",
   "PWA_APP_USING_VTECX": "Pwa App using Vtecx",
-  "SHARING_CODE_FROM_WEB_APP_TO_NATIVE_APP": "Sharing code from web app to native app"
+  "SHARING_CODE_FROM_WEB_APP_TO_NATIVE_APP": "Sharing code from web app to native app",
+  "SERVER_SIDE_JAVASCRIPT": "Server Side Javascript",
+  "MEDIUM_LINK": "Medium Link",
+  "BASICS": "Basics",
+  "WATCHING_THE_FUNCTIONS": "Watching the functions",
+  "DEPLOYING_THE_FUNCTION": "Deploying the function",
+  "GET_ALL_THE_DATA": "Get All the data",
+  "GET_SPECIFIC_DATA": "Get Specific data",
+  "GET_DATA_BY_SCROLLING": "Get Data by scrolling",
+  "GET_DATA_BY_PAGINATION": "Get Data by pagination",
+  "SIMPLE_FILTERING_WITH_PAGINATION": "Simple filtering with pagination",
+  "SIMPLE_SORTING_WITH_PAGINATION": "Simple sorting with pagination",
+  "DEPLOY": "Deploy"
 }

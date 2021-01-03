@@ -32,3 +32,7 @@ npm run serve:login
 ```
 npm run serve:index
 ```
+<br/>
+```
+./deploy.sh
+```

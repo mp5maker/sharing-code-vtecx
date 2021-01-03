@@ -25,5 +25,17 @@
   "CREATE_A_SIMPLE_PWA_APP": "シンプルなpwaアプリを作成する",
   "ADD_CUSTOM_INSTALL_BANNER": "カスタムインストールバナーを追加する",
   "PWA_APP_USING_VTECX": "vtecxを使用したpwaアプリ",
-  "SHARING_CODE_FROM_WEB_APP_TO_NATIVE_APP": "Webアプリからネイティブアプリへのコードの共有"
+  "SHARING_CODE_FROM_WEB_APP_TO_NATIVE_APP": "Webアプリからネイティブアプリへのコードの共有",
+  "SERVER_SIDE_JAVASCRIPT": "サーバー側のJavaScript",
+  "MEDIUM_LINK": "ミディアムリンク",
+  "BASICS": "ミディアムリンク",
+  "WATCHING_THE_FUNCTIONS": "機能を見ている",
+  "DEPLOYING_THE_FUNCTION": "関数のデプロイ",
+  "GET_ALL_THE_DATA": "すべてのデータを取得する",
+  "GET_SPECIFIC_DATA": "特定のデータを取得する",
+  "GET_DATA_BY_SCROLLING": "スクロールしてデータを取得する",
+  "GET_DATA_BY_PAGINATION": "ページネーションによってデータを取得する",
+  "SIMPLE_FILTERING_WITH_PAGINATION": "ページネーションによる単純なフィルタリング",
+  "SIMPLE_SORTING_WITH_PAGINATION": "ページネーションによる簡単な並べ替え",
+  "DEPLOY": "デプロイ"
 }

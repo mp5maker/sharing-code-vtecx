@@ -12,6 +12,7 @@ import { FolderAcls } from "@learning/components/snippets/folder-acls";
 import { SimplePost } from "@learning/components/snippets/simple-post";
 import { SimpleUpdate } from "@learning/components/snippets/simple-update";
 import { SimpleDelete } from "@learning/components/snippets/simple-delete";
+import { SSRHtml } from '@learning/components/snippets/ssr-html'
 import { Link } from "@learning/components/common/Link";
 
 export const Home = (): JSX.Element => {
@@ -118,6 +119,19 @@ export const Home = (): JSX.Element => {
           </Text>
           <Code type={"bash"}>
             <Text className={"token function"}>npm run</Text> serve:index
+          </Code>
+        </Box>
+        <Box marginTop={theme.spacing(1)} id={"simple-deploy"}>
+          <Text variant={"h4"}>{t("DEPLOY")}</Text>
+          <Text>
+            <ReactMarkdown
+              plugins={[]}
+              allowDangerousHtml
+              children={currentMarkdown.SimpleDeploy}
+            />
+          </Text>
+          <Code type={"bash"}>
+            <Text className={"token function"}>./deploy.sh</Text>
           </Code>
         </Box>
         <Box marginTop={theme.spacing(1)} id={"fundamentals-summary"}>
@@ -234,7 +248,61 @@ export const Home = (): JSX.Element => {
       </Box>
       <Box marginTop={theme.spacing(1)} id={"crud-read"}>
         <Text variant={"h4"}>{t("READ")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.SimpleRead}
+          />
+        </Text>
+        <Text variant={"body2"}>{t("GET_ALL_THE_DATA")}</Text>
+        <Code type={"javascript"}>axios.get('/d/users?f')</Code>
+        <Text variant={"body2"}>{t("GET_SPECIFIC_DATA")}</Text>
+        <Code type={"javascript"}>{"axios.get(`/d/users?f&id=${id}`)"}</Code>
+        <Text variant={"body2"}>{t("GET_DATA_BY_SCROLLING")}</Text>
+        <Code type={"javascript"}>
+          {"axios.get(`/d/users?f&l=${PAGE_SIZE}&p=${next}`)"}
+        </Code>
+        <Text variant={"body2"}>{t("GET_DATA_BY_PAGINATION")}</Text>
+        <Code type={"javascript"}>
+          {"axios.get(`/d/users?f&_pagination=1,50&l=${PAGE_SIZE}`)"}
+        </Code>
+        <Code type={"javascript"}>
+          {"axios.get(`/d/users?f&n=${page}&l=${PAGE_SIZE}`)"}
+        </Code>
+        <Text variant={"body2"}>{t("SIMPLE_FILTERING_WITH_PAGINATION")}</Text>
+        <Code type={"javascript"}>
+          {
+            "axios.get(`/d/users?f&_pagination=1,50&l=${PAGE_SIZE}&user.[YOUR_ATTR]=${CONDITION}`)"
+          }
+        </Code>
+        <Text variant={"body2"}>{t('SIMPLE_SORTING_WITH_PAGINATION')}</Text>
+        <Code type={"javascript"}>
+          {"axios.get(`/d/users?f&n=${page}&l=${PAGE_SIZE}&s=${SORT}`)"}
+        </Code>
       </Box>
+    </Box>
+  );
+
+  const ServerSideContent = (
+    <Box id={"server-side-javascript"} marginTop={theme.spacing(2)}>
+      <Text variant={"h4"}>{t("SERVER_SIDE_JAVASCRIPT")}</Text>
+      <Text>
+        <ReactMarkdown
+          plugins={[]}
+          allowDangerousHtml
+          children={currentMarkdown.ServerSideJavascriptIntro}
+        />
+      </Text>
+      <Text>{t('WATCHING_THE_FUNCTIONS')}</Text>
+      <Code type={"bash"}>
+        <Text className={"token function"}>npm run</Text> watch:server -- --env.entry=/server/[your-file-name]
+      </Code>
+      <Text>{t('DEPLOYING_THE_FUNCTION')}</Text>
+      <Code type={"bash"}>
+        <Text className={"token function"}>npm run</Text> serve -- --env.entry=/server/[your-file-name]
+      </Code>
+      <Code type={"javascript"} caption={'src/server/ssr.html.tsx'}>{SSRHtml}</Code>
     </Box>
   );
 
@@ -289,6 +357,7 @@ export const Home = (): JSX.Element => {
       {GettingStartedContent}
       {CreatingAnApiContent}
       {PerformCrudContent}
+      {ServerSideContent}
       {AdditionalResourcesContent}
     </Body>
   );

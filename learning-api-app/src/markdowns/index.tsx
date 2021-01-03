@@ -22,6 +22,12 @@ import ENGLISH_UPLOAD_SAMPLE_DATA from "@learning/markdowns/en/upload-sample-dat
 import ENGLISH_CREATE_AN_API_SUMMARY from "@learning/markdowns/en/create-an-api-summary.md"
 // @ts-ignore
 import ENGLISH_PERFORM_CRUD from "@learning/markdowns/en/perform-crud.md"
+// @ts-ignore
+import ENGLISH_SIMPLE_READ from "@learning/markdowns/en/simple-read.md"
+// @ts-ignore
+import ENGLISH_SERVER_SIDE_JAVASCRIPT_INTRO from "@learning/markdowns/en/server-side-javascript-intro.md"
+// @ts-ignore
+import ENGLISH_SIMPLE_DEPLOY from "@learning/markdowns/en/simple-deploy.md"
 
 export default {
   en: {
@@ -36,7 +42,10 @@ export default {
     CreateSchema: ENGLISH_CREATE_SCHEMA,
     UploadSampleData: ENGLISH_UPLOAD_SAMPLE_DATA,
     CreateAnApiSummary: ENGLISH_CREATE_AN_API_SUMMARY,
-    PerformCrud: ENGLISH_PERFORM_CRUD
+    PerformCrud: ENGLISH_PERFORM_CRUD,
+    SimpleRead: ENGLISH_SIMPLE_READ,
+    ServerSideJavascriptIntro: ENGLISH_SERVER_SIDE_JAVASCRIPT_INTRO,
+    SimpleDeploy: ENGLISH_SIMPLE_DEPLOY
   },
   ja: {
     GettingStarted: ENGLISH_GETTING_STARTED,
@@ -50,6 +59,9 @@ export default {
     CreateSchema: ENGLISH_CREATE_SCHEMA,
     UploadSampleData: ENGLISH_UPLOAD_SAMPLE_DATA,
     CreateAnApiSummary: ENGLISH_CREATE_AN_API_SUMMARY,
-    PerformCrud: ENGLISH_PERFORM_CRUD
+    PerformCrud: ENGLISH_PERFORM_CRUD,
+    SimpleRead: ENGLISH_SIMPLE_READ,
+    ServerSideJavascriptIntro: ENGLISH_SERVER_SIDE_JAVASCRIPT_INTRO,
+    SimpleDeploy: ENGLISH_SIMPLE_DEPLOY,
   }
 };

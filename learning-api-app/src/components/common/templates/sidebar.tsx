@@ -84,7 +84,8 @@ const ARTICLES: any = {
   fundamentals: false,
   creatingAnApi: false,
   performCrud: false,
-  additionalResources: false
+  additionalResources: false,
+  serverSide: false
 };
 
 interface SidebarPropsInterface {}
@@ -214,6 +215,30 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
     </Section>
   );
 
+  const ServerSideContent = (
+    <Section>
+      <Article
+        onClick={() =>
+          setShowSubArticles({
+            ...ARTICLES,
+            serverSide: !showSubArticles.serverSide
+          })
+        }
+        isActive={showSubArticles.serverSide}
+        href={"#server-side-javascript"}
+      >
+        {t("SERVER_SIDE_JAVASCRIPT")}
+      </Article>
+      {showSubArticles.serverSide ? (
+        <>
+          <SubArticle href={"#server-side-basics"}>{t("BASICS")}</SubArticle>
+        </>
+      ) : (
+        <></>
+      )}
+    </Section>
+  );
+
   const AdditionalResourcesContent = (
     <Section>
       <Article
@@ -244,6 +269,7 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
       {FundamentalsContent}
       {CreatingAnApiContent}
       {PerformCrudContent}
+      {ServerSideContent}
       {AdditionalResourcesContent}
       {children}
     </>
