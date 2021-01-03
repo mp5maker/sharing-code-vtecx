@@ -18,12 +18,22 @@ import {
   SimpleUploadClientPhoto
 } from "@learning/components/snippets/simple-upload-photo";
 import { Link } from "@learning/components/common/Link";
+import { useLocation } from 'react-router-dom'
+import get from 'lodash/get'
 
 export const Home = (): JSX.Element => {
   const { t, i18n } = useTranslation();
   const { theme } = useTheme();
+  const location = useLocation()
   // @ts-ignore
   const currentMarkdown: any = Markdowns.default[i18n.language];
+
+
+  React.useEffect(() => {
+    const hash = get(location, 'hash', '')
+    const element = document.querySelector(hash)
+    if (element) element.scrollIntoView()
+  }, [])
 
   const GettingStartedContent = (
     <>
