@@ -37,5 +37,6 @@
   "GET_DATA_BY_PAGINATION": "Get Data by pagination",
   "SIMPLE_FILTERING_WITH_PAGINATION": "Simple filtering with pagination",
   "SIMPLE_SORTING_WITH_PAGINATION": "Simple sorting with pagination",
-  "DEPLOY": "Deploy"
+  "DEPLOY": "Deploy",
+  "UPLOAD_PHOTO": "Upload Photo"
 }

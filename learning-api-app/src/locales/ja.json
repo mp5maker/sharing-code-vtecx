@@ -37,5 +37,6 @@
   "GET_DATA_BY_PAGINATION": "ページネーションによってデータを取得する",
   "SIMPLE_FILTERING_WITH_PAGINATION": "ページネーションによる単純なフィルタリング",
   "SIMPLE_SORTING_WITH_PAGINATION": "ページネーションによる簡単な並べ替え",
-  "DEPLOY": "デプロイ"
+  "DEPLOY": "デプロイ",
+  "UPLOAD_PHOTO": "写真をアップする"
 }

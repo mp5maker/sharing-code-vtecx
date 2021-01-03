@@ -28,6 +28,8 @@ import ENGLISH_SIMPLE_READ from "@learning/markdowns/en/simple-read.md"
 import ENGLISH_SERVER_SIDE_JAVASCRIPT_INTRO from "@learning/markdowns/en/server-side-javascript-intro.md"
 // @ts-ignore
 import ENGLISH_SIMPLE_DEPLOY from "@learning/markdowns/en/simple-deploy.md"
+// @ts-ignore
+import ENGLISH_UPLOAD_PHOTO from "@learning/markdowns/en/upload-photo.md"
 
 export default {
   en: {
@@ -45,7 +47,8 @@ export default {
     PerformCrud: ENGLISH_PERFORM_CRUD,
     SimpleRead: ENGLISH_SIMPLE_READ,
     ServerSideJavascriptIntro: ENGLISH_SERVER_SIDE_JAVASCRIPT_INTRO,
-    SimpleDeploy: ENGLISH_SIMPLE_DEPLOY
+    SimpleDeploy: ENGLISH_SIMPLE_DEPLOY,
+    UploadPhoto: ENGLISH_UPLOAD_PHOTO
   },
   ja: {
     GettingStarted: ENGLISH_GETTING_STARTED,
@@ -63,5 +66,6 @@ export default {
     SimpleRead: ENGLISH_SIMPLE_READ,
     ServerSideJavascriptIntro: ENGLISH_SERVER_SIDE_JAVASCRIPT_INTRO,
     SimpleDeploy: ENGLISH_SIMPLE_DEPLOY,
+    UploadPhoto: ENGLISH_UPLOAD_PHOTO
   }
 };

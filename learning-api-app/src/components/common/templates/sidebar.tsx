@@ -232,6 +232,7 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({
       {showSubArticles.serverSide ? (
         <>
           <SubArticle href={"#server-side-basics"}>{t("BASICS")}</SubArticle>
+          <SubArticle href={"#simple-upload-photo"}>{t("UPLOAD_PHOTO")}</SubArticle>
         </>
       ) : (
         <></>

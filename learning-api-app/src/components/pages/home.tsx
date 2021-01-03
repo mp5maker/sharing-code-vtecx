@@ -12,7 +12,11 @@ import { FolderAcls } from "@learning/components/snippets/folder-acls";
 import { SimplePost } from "@learning/components/snippets/simple-post";
 import { SimpleUpdate } from "@learning/components/snippets/simple-update";
 import { SimpleDelete } from "@learning/components/snippets/simple-delete";
-import { SSRHtml } from '@learning/components/snippets/ssr-html'
+import { SSRHtml } from "@learning/components/snippets/ssr-html";
+import {
+  SimpleUploadServerPhoto,
+  SimpleUploadClientPhoto
+} from "@learning/components/snippets/simple-upload-photo";
 import { Link } from "@learning/components/common/Link";
 
 export const Home = (): JSX.Element => {
@@ -276,7 +280,7 @@ export const Home = (): JSX.Element => {
             "axios.get(`/d/users?f&_pagination=1,50&l=${PAGE_SIZE}&user.[YOUR_ATTR]=${CONDITION}`)"
           }
         </Code>
-        <Text variant={"body2"}>{t('SIMPLE_SORTING_WITH_PAGINATION')}</Text>
+        <Text variant={"body2"}>{t("SIMPLE_SORTING_WITH_PAGINATION")}</Text>
         <Code type={"javascript"}>
           {"axios.get(`/d/users?f&n=${page}&l=${PAGE_SIZE}&s=${SORT}`)"}
         </Code>
@@ -294,15 +298,35 @@ export const Home = (): JSX.Element => {
           children={currentMarkdown.ServerSideJavascriptIntro}
         />
       </Text>
-      <Text>{t('WATCHING_THE_FUNCTIONS')}</Text>
+      <Text>{t("WATCHING_THE_FUNCTIONS")}</Text>
       <Code type={"bash"}>
-        <Text className={"token function"}>npm run</Text> watch:server -- --env.entry=/server/[your-file-name]
+        <Text className={"token function"}>npm run</Text> watch:server --
+        --env.entry=/server/[your-file-name]
       </Code>
-      <Text>{t('DEPLOYING_THE_FUNCTION')}</Text>
+      <Text>{t("DEPLOYING_THE_FUNCTION")}</Text>
       <Code type={"bash"}>
-        <Text className={"token function"}>npm run</Text> serve -- --env.entry=/server/[your-file-name]
+        <Text className={"token function"}>npm run</Text> serve --
+        --env.entry=/server/[your-file-name]
       </Code>
-      <Code type={"javascript"} caption={'src/server/ssr.html.tsx'}>{SSRHtml}</Code>
+      <Code type={"javascript"} caption={"src/server/ssr.html.tsx"}>
+        {SSRHtml}
+      </Code>
+      <Box marginTop={theme.spacing(1)} id={"simple-upload-photo"}>
+        <Text variant={"h4"}>{t("UPLOAD_PHOTO")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.UploadPhoto}
+          />
+        </Text>
+        <Code type="javascript" caption={"src/server/save-profile-photo.tsx"}>
+          {SimpleUploadServerPhoto}
+        </Code>
+        <Code type="javascript" caption={"Uploading the photo from anywhere"}>
+          {SimpleUploadClientPhoto}
+        </Code>
+      </Box>
     </Box>
   );
 
