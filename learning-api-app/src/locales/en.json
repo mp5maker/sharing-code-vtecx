@@ -42,5 +42,7 @@
   "BIG_QUERY": "Big Query",
   "COPY": "Copy",
   "COPIED": "Copied",
-  "MORE": "More"
+  "MORE": "More",
+  "SEND_EMAIL": "Send Email",
+  "CREATE_PDF": "Create PDF"
 }

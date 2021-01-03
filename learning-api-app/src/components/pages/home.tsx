@@ -1,32 +1,32 @@
-import * as React from "react";
 import { Body } from "@learning/components/common/body";
-import { Text } from "@learning/components/common/text";
-import { useTranslation } from "react-i18next";
-import { useTheme } from "@learning/components/hooks/useTheme";
 import { Box } from "@learning/components/common/box";
 import { Code } from "@learning/components/common/code";
-import ReactMarkdown from "react-markdown";
-import * as Markdowns from "@learning/markdowns";
+import { Link } from "@learning/components/common/Link";
 import { Picture } from "@learning/components/common/Picture";
+import { Text } from "@learning/components/common/text";
+import { useTheme } from "@learning/components/hooks/useTheme";
+import {
+  SimpleBigQueryDelete, SimpleBigQueryGet,
+  SimpleBigQueryPost,
+  SimpleBigQueryPut
+} from "@learning/components/snippets/big-query";
 import { FolderAcls } from "@learning/components/snippets/folder-acls";
+import { PropertiesEmail, PropertiesXML } from "@learning/components/snippets/properties";
+import { SendEmail } from '@learning/components/snippets/send-email';
+import { SimpleDelete } from "@learning/components/snippets/simple-delete";
 import { SimplePost } from "@learning/components/snippets/simple-post";
 import { SimpleUpdate } from "@learning/components/snippets/simple-update";
-import { SimpleDelete } from "@learning/components/snippets/simple-delete";
-import { SSRHtml } from "@learning/components/snippets/ssr-html";
-import { PropertiesXML } from "@learning/components/snippets/properties";
 import {
-  SimpleBigQueryGet,
-  SimpleBigQueryPost,
-  SimpleBigQueryPut,
-  SimpleBigQueryDelete,
-} from "@learning/components/snippets/big-query";
-import {
-  SimpleUploadServerPhoto,
-  SimpleUploadClientPhoto
+  SimpleUploadClientPhoto, SimpleUploadServerPhoto
 } from "@learning/components/snippets/simple-upload-photo";
-import { Link } from "@learning/components/common/Link";
-import { useLocation } from "react-router-dom";
+import { SSRHtml } from "@learning/components/snippets/ssr-html";
+import { SSRPDF } from "@learning/components/snippets/ssr-pdf";
+import * as Markdowns from "@learning/markdowns";
 import get from "lodash/get";
+import * as React from "react";
+import { useTranslation } from "react-i18next";
+import ReactMarkdown from "react-markdown";
+import { useLocation } from "react-router-dom";
 
 export const Home = (): JSX.Element => {
   const { t, i18n } = useTranslation();
@@ -345,6 +345,27 @@ export const Home = (): JSX.Element => {
           {SimpleUploadClientPhoto}
         </Code>
       </Box>
+      <Box marginTop={theme.spacing(1)} id={"send-email"}>
+        <Text variant={"h4"}>{t("SEND_EMAIL")}</Text>
+        <Code type="javascript" caption={"src/server/send-email.tsx"}>
+          {SendEmail}
+        </Code>
+        <Code>
+          axios.get("/s/send-email")
+        </Code>
+        <Code caption={'setup/_settings/properties.xml'}>
+          {PropertiesEmail}
+        </Code>
+      </Box>
+      <Box marginTop={theme.spacing(1)} id={"create-pdf"}>
+        <Text variant={"h4"}>{t("CREATE_PDF")}</Text>
+        <Code type="javascript" caption={"src/server/ssr.pdf.tsx"}>
+          {SSRPDF}
+        </Code>
+        <Code>
+          axios.get("/s/ssr.pdf?firstName=John&lastName=Doe")
+        </Code>
+      </Box>
     </Box>
   );
 
@@ -430,7 +451,7 @@ export const Home = (): JSX.Element => {
         </Link>
       </Box>
       <Box marginTop={2}>
-        <Text>Big Query</Text>
+        <Text>{t('BIG_QUERY')}</Text>
         <Link
           target={"__blank"}
           variant={"body1"}
@@ -441,13 +462,33 @@ export const Home = (): JSX.Element => {
       </Box>
       <Box marginTop={2}>
         <Text>{t("MORE")}</Text>
-        <Link
-          target={"__blank"}
-          variant={"body1"}
-          href="https://khan-photon.medium.com/sharing-codes-between-react-web-app-and-react-native-expo-app-2887e437d55"
-        >
-          https://blog.vte.cx/
-        </Link>
+        <Box>
+          <Link
+            target={"__blank"}
+            variant={"body1"}
+            href="https://khan-photon.medium.com/sharing-codes-between-react-web-app-and-react-native-expo-app-2887e437d55"
+          >
+            https://blog.vte.cx/
+          </Link>
+        </Box>
+        <Box>
+          <Link
+            target={"__blank"}
+            variant={"body1"}
+            href="http://reflexworks.jp/documentation.html#"
+          >
+            http://reflexworks.jp/documentation.html#
+          </Link>
+        </Box>
+        <Box>
+          <Link
+            target={"__blank"}
+            variant={"body1"}
+            href="https://logicalant.medium.com/access-control-in-vtecx-part-zero-cfad1858666a"
+          >
+            ACL
+          </Link>
+        </Box>
       </Box>
     </Box>
   );

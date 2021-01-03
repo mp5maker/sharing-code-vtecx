@@ -42,5 +42,7 @@
   "BIG_QUERY": "BigQuery",
   "COPY": "コピー",
   "COPIED": "コピー",
-  "MORE": "もっと"
+  "MORE": "もっと",
+  "SEND_EMAIL": "メールを送る",
+  "CREATE_PDF": "PDFを作成"
 }

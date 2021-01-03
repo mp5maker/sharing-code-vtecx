@@ -234,6 +234,9 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
           <SubArticle href={"#simple-upload-photo"}>
             {t("UPLOAD_PHOTO")}
           </SubArticle>
+          <SubArticle href={"#send-email"}>
+            {t("SEND_EMAIL")}
+          </SubArticle>
         </>
       ) : (
         <></>
