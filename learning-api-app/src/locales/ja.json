@@ -45,5 +45,6 @@
   "MORE": "もっと",
   "SEND_EMAIL": "メールを送る",
   "CREATE_PDF": "PDFを作成",
-  "ACCESS_CONTROL_LIST": "アクセス制御リスト"
+  "ACCESS_CONTROL_LIST": "アクセス制御リスト",
+  "BASIC": "基本"
 }

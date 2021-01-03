@@ -22,6 +22,7 @@ import {
 } from "@learning/components/snippets/simple-upload-photo";
 import { SSRHtml } from "@learning/components/snippets/ssr-html";
 import { SSRPDF } from "@learning/components/snippets/ssr-pdf";
+import { Report } from '@learning/components/snippets/report';
 import * as Markdowns from "@learning/markdowns";
 import get from "lodash/get";
 import * as React from "react";
@@ -372,7 +373,7 @@ export const Home = (): JSX.Element => {
 
   const BigQueryContent = (
     <Box id={"big-query"} marginTop={theme.spacing(2)}>
-      <Text variant={"h4"}>{t("BIG_QUERY")}</Text>
+      <Text variant={"h4"}>{t("BASIC")}</Text>
       <Box id={"big-query-intro"}>
         <Text>
           <ReactMarkdown
@@ -395,6 +396,12 @@ export const Home = (): JSX.Element => {
         </Code>
         <Code type={"javascript"} caption={"src/server/delete-big-query.tsx"}>
           {SimpleBigQueryDelete}
+        </Code>
+      </Box>
+      <Box id ={"big-query-report"}>
+        <Code type="javascript" caption="src/server/generate-report.tsx">{Report}</Code>
+        <Code type="javascript">
+          axios.get("/s/generate-report?type=yoga_gender")
         </Code>
       </Box>
       <Box id={"big-query-summary"} marginTop={theme.spacing(2)}>

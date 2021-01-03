@@ -45,5 +45,6 @@
   "MORE": "More",
   "SEND_EMAIL": "Send Email",
   "CREATE_PDF": "Create PDF",
-  "ACCESS_CONTROL_LIST": "Access Control List"
+  "ACCESS_CONTROL_LIST": "Access Control List",
+  "BASIC": "Basic"
 }
