@@ -375,7 +375,7 @@ export const Home = (): JSX.Element => {
           {SimpleBigQueryDelete}
         </Code>
       </Box>
-      <Box id={"big-query-summary"}>
+      <Box id={"big-query-summary"} marginTop={theme.spacing(2)}>
         <Text variant={"h4"}>{t("SUMMARY")}</Text>
         <Text>
           <ReactMarkdown

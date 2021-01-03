@@ -39,5 +39,7 @@
   "SIMPLE_SORTING_WITH_PAGINATION": "Simple sorting with pagination",
   "DEPLOY": "Deploy",
   "UPLOAD_PHOTO": "Upload Photo",
-  "BIG_QUERY": "Big Query"
+  "BIG_QUERY": "Big Query",
+  "COPY": "Copy",
+  "COPIED": "Copied"
 }
