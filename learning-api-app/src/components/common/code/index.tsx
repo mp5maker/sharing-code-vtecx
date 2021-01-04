@@ -57,7 +57,8 @@ export const Code: React.FC<CodePropsInterface> = ({
         height: "100%",
         position: "relative",
         color: theme.palette.text.primary,
-        backgroundColor: theme.palette.background.default
+        backgroundColor: theme.palette.background.default,
+        padding: theme.spacing(1)
       }}
     >
       <Box

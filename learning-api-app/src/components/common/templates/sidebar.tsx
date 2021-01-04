@@ -1,5 +1,5 @@
 import { Box } from "@learning/components/common/box";
-import { Link, LinkPropsInterface } from "@learning/components/common/Link";
+import { Link, LinkPropsInterface } from "@learning/components/common/link";
 import { Search } from "@learning/components/common/search";
 import { useTheme } from "@learning/components/hooks/useTheme";
 import get from "lodash/get";
