@@ -50,5 +50,6 @@
   "USER_ADMIN": "User Admin",
   "DELETE_PHOTO": "Delete Photo",
   "SIMPLE_SEARCH_FOR_PAGINATION": "Simple Search For Pagination",
-  "ADD_ACL_BY_UID": "Add Acl by UID"
+  "ADD_ACL_BY_UID": "Add Acl by UID",
+  "CHECK_ALL_THE_ACLS_OF_FOLDER_ACL": "Check all the acls of the folder acls"
 }

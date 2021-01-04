@@ -488,7 +488,17 @@ export const Home = (): JSX.Element => {
       <Box marginTop={2}>
         <Text variant={"h4"}>{t("ADD_ACL_BY_UID")}</Text>
         <Box>
-          <Code caption={"add-acl-by-uid"} type={'javascript'}>{AddAclByUid}</Code>
+          <Code caption={"add-acl-by-uid"} type={"javascript"}>
+            {AddAclByUid}
+          </Code>
+        </Box>
+      </Box>
+      <Box marginTop={5}>
+        <Text variant={"h4"}>{t("CHECK_ALL_THE_ACLS_OF_FOLDER_ACL")}</Text>
+        <Box>
+          <Code caption={"add-acl-by-uid"} type={"javascript"}>
+            /d/users?e&x
+          </Code>
         </Box>
       </Box>
     </Box>

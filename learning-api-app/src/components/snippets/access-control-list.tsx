@@ -114,5 +114,5 @@ let reqdata = {
 	}
 }
 
-axios.put('/d/?_post', reqdata)
+axios.put('/d/?_post', reqdata) // Yes, you have to put request to ?_post
 `;
