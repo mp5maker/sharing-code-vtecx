@@ -160,7 +160,6 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
       const keywords = ARTICLES[item].keywords;
       keywords.forEach((eachKeyword: string) => {
         if (eachKeyword.toLowerCase().indexOf(value.toLowerCase()) > -1) {
-          console.log(eachKeyword);
           if (!findKeys.includes(item)) findKeys.push(item);
         }
       });
