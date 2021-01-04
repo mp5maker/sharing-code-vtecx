@@ -25,7 +25,7 @@ import {
 import { Report } from "@learning/components/snippets/report";
 import { SendEmail } from "@learning/components/snippets/send-email";
 import { SimpleDelete } from "@learning/components/snippets/simple-delete";
-import { SimplePost } from "@learning/components/snippets/simple-post";
+import { SimplePost, NestedPost } from "@learning/components/snippets/simple-post";
 import { SimpleUpdate } from "@learning/components/snippets/simple-update";
 import {
   SimpleUploadClientPhoto,
@@ -272,6 +272,7 @@ export const Home = (): JSX.Element => {
       <Box marginTop={theme.spacing(1)} id={"crud-create"}>
         <Text variant={"h4"}>{t("CREATE")}</Text>
         <Code type="javascript">{SimplePost}</Code>
+        <Code type="javascript" caption={"nested-post"}>{NestedPost}</Code>
       </Box>
       <Box marginTop={theme.spacing(1)} id={"crud-update"}>
         <Text variant={"h4"}>{t("UPDATE")}</Text>

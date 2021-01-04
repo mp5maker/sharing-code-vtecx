@@ -14,3 +14,28 @@ export const SimplePost = `
 
   axios.post("/d/users", [{ user }]);
 `;
+
+
+export const NestedPost =
+`const req_data = [
+    {
+      link: [
+        {
+          ___href: \`/product/\${category_id}\`,
+          ___rel: 'self'
+        }
+      ]
+    },
+    {
+      link: [
+        {
+          ___href: \`/product/\${category_id}\${product_id}\`,
+          ___rel: 'self'
+        }
+      ],
+      title: \${category_id}_\${product_id}
+    }
+  ]
+
+  axios.put('/d/product/', req_data)
+`
