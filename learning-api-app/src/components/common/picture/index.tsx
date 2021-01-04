@@ -1,12 +1,12 @@
-import * as React from 'react'
-import Avatar, { AvatarProps } from '@material-ui/core/Avatar'
-import { Box } from '@learning/components/common/box'
-import { Text } from '@learning/components/common/text'
-interface ImagePropsInterface extends AvatarProps{
-  isAvatar?: boolean,
-  alt?: string
-  src: string
-  caption?: JSX.Element | JSX.Element[] | string
+import * as React from "react";
+import Avatar, { AvatarProps } from "@material-ui/core/Avatar";
+import { Box } from "@learning/components/common/box";
+import { Text } from "@learning/components/common/text";
+interface ImagePropsInterface extends AvatarProps {
+  isAvatar?: boolean;
+  alt?: string;
+  src: string;
+  caption?: JSX.Element | JSX.Element[] | string;
 }
 
 export const Picture: React.FC<ImagePropsInterface> = ({
@@ -17,30 +17,36 @@ export const Picture: React.FC<ImagePropsInterface> = ({
   ...props
 }): JSX.Element => {
   if (isAvatar) {
-    return (
-      <Avatar {...props} />
-    )
+    return <Avatar {...props} />;
   }
 
   const imageProps = {
     ...(src ? { src } : {}),
     ...(alt ? { alt } : {})
-  }
+  };
 
   return (
     <>
-      <Box>
+      <Box
+        style={{
+          display: 'none',
+          backgroundColor: "transparent"
+        }}
+      >
         <img {...imageProps} />
-        {
-          caption ? (
-            <Box component={'figcaption'}>
-              { typeof(caption) === 'string' ? (
-                <Text>{caption}</Text>
-              ) : caption}
-            </Box>
-          ) : <></>
-        }
+        {caption ? (
+          <Box
+            component={"figcaption"}
+            style={{
+              backgroundColor: "transparent"
+            }}
+          >
+            {typeof caption === "string" ? <Text>{caption}</Text> : caption}
+          </Box>
+        ) : (
+          <></>
+        )}
       </Box>
     </>
-  )
-}
+  );
+};

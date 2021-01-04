@@ -11,7 +11,8 @@ import {
   LANGUAGE_JAPANESE
 } from "@learning/constants/settings";
 import { Sidebar } from "@learning/components/common/templates/sidebar";
-import { FloatingBar } from '@learning/components/common/floating-bar'
+import { FloatingBar } from "@learning/components/common/floating-bar";
+import { Picture } from "@learning/components/common/picture";
 
 interface BodyPropsInterface extends BoxPropsInterface {
   documentation?: boolean;
@@ -33,7 +34,9 @@ export const Body: React.FC<BodyPropsInterface> = ({
         <NavBar
           style={{
             minHeight: 60,
-            padding: theme.spacing.small
+            padding: theme.spacing.small,
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.secondary
           }}
           position={"sticky"}
         >
@@ -46,9 +49,20 @@ export const Body: React.FC<BodyPropsInterface> = ({
               alignItems: "center"
             }}
           >
-            <Text color={"inherit"} variant={"h5"}>
-              {t("VTECX")}
-            </Text>
+            <Box
+              helper={"spaceBetween"}
+              style={{
+                backgroundColor: "transparent"
+              }}
+            >
+              <Picture
+                src={"img/logo_small.svg"}
+                style={{ width: "36px", height: "36px", backgroundColor: 'transparent'}}
+              />
+              <Text color={"inherit"} variant={"h5"} style={{ marginLeft: theme.spacing(1) }}>
+                {t("VTECX")}
+              </Text>
+            </Box>
             <Box
               helper={"spaceBetween"}
               style={{
