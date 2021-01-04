@@ -39,7 +39,7 @@
   "SIMPLE_SORTING_WITH_PAGINATION": "Simple sorting with pagination",
   "DEPLOY": "Deploy",
   "UPLOAD_PHOTO": "Upload Photo",
-  "BIG_QUERY": "Big Query",
+  "BIG_QUERY": "BigQuery",
   "COPY": "Copy",
   "COPIED": "Copied",
   "MORE": "More",
@@ -51,5 +51,7 @@
   "DELETE_PHOTO": "Delete Photo",
   "SIMPLE_SEARCH_FOR_PAGINATION": "Simple Search For Pagination",
   "ADD_ACL_BY_UID": "Add Acl by UID",
-  "CHECK_ALL_THE_ACLS_OF_FOLDER_ACL": "Check all the acls of the folder acls"
+  "CHECK_ALL_THE_ACLS_OF_FOLDER_ACL": "Check all the acls of the folder acls",
+  "CHECK_FOLDER_ACL": "Check Folder Acl",
+  "FOLDER_ACL": "Folder Acl"
 }

@@ -1,7 +1,7 @@
 Some of the new functions have been introduced for vtecxapi
 Let us assume the file to be here: src/server/sample.tsx
 
-Example of vtecxapi.getQuery("your-sample-string")
+Example of vtecxapi.getQueryString("your-sample-string")
 
 ```
 axios.get("/s/sample?foo=hello")

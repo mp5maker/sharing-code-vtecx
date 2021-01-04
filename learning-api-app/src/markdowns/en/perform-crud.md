@@ -5,6 +5,30 @@ if you are using axios please configure as below
 
     axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'
 
+<table>
+    <thead>
+        <tr>
+            <th><strong>Type</strong></th>
+            <th><strong>Description</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>e</td>
+            <td>metadata</td>
+        </tr>
+        <tr>
+            <td>f</td>
+            <td>feed</td>
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>xml</td>
+        </tr>
+    </tbody>
+</table>
+
+
 ```
         /d/ represents the workings related to the relational database <br/>
 ```
@@ -18,7 +42,12 @@ if you are using axios please configure as below
 ```
 f retrieves the entries under the entry list in the form json <br/>
 ```
-**http://localhost:8000/d/users?x** <br/>
+**http://localhost:8000/d/users?f** <br/>
+
+```
+?e&x retrieves the metadata of the entry <br/>
+```
+**http://localhost:8000/d/users?e&x** <br/>
 
 ```
 ?x&f this retrieves the entries under the entry list in form xml <br/>

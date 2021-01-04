@@ -16,6 +16,12 @@ This value indicates where the file should be location and it also allows the us
 <link href="/d/_html/img/profile_photo">
 ```
 
+/d/_html will be rewritten to /. So it can be omitted.
+
+```
+<link href=“/img/profile_photo”>
+```
+
 In this way calling image using tags becomes very flexible and allows us to write clean code.
 
 You can save it anywhere in custom locations but before you go and save in there we need to go through User, group management and access control

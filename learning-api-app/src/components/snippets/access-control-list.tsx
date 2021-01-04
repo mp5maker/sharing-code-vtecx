@@ -116,3 +116,17 @@ let reqdata = {
 
 axios.put('/d/?_post', reqdata) // Yes, you have to put request to ?_post
 `;
+
+
+export const AddFilesToBeAccessibleEasily =
+`<entry>
+	<contributor>
+		<uri>urn:vte.cx:acl:/_group/$admin,CRUD</uri>
+	</contributor>
+	<contributor>
+			<!-- ACL settings that allow all users to get(*) -->
+		<uri>urn:vte.cx:acl:*,R.</uri>
+	</contributor>
+	<link rel="self" href="/_html/manifest.json" />
+</entry>
+`;

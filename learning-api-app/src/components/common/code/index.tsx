@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 interface CodePropsInterface {
   caption?: JSX.Element | JSX.Element[] | string;
-  type?: "bash" | "javascript" | "css";
+  type?: "bash" | "javascript" | "css" | "html";
   prism?: boolean;
   className?: string
   printContent?: string
@@ -41,7 +41,7 @@ export const Code: React.FC<CodePropsInterface> = ({
 
   const onCopy = () => {
     setClicked(true);
-    if (type == 'javascript') {
+    if (type == 'javascript' || type == 'html') {
       // @ts-ignore
       CopyToClipboard({
         stringifyData: JSON.stringify(printContent ? printContent : children),

@@ -10,6 +10,7 @@ import {
   OneWayToLogin,
   UserAdmin,
   AddAclByUid,
+  AddFilesToBeAccessibleEasily
 } from "@learning/components/snippets/access-control-list.tsx";
 import {
   SimpleBigQueryDelete,
@@ -25,7 +26,10 @@ import {
 import { Report } from "@learning/components/snippets/report";
 import { SendEmail } from "@learning/components/snippets/send-email";
 import { SimpleDelete } from "@learning/components/snippets/simple-delete";
-import { SimplePost, NestedPost } from "@learning/components/snippets/simple-post";
+import {
+  SimplePost,
+  NestedPost
+} from "@learning/components/snippets/simple-post";
 import { SimpleUpdate } from "@learning/components/snippets/simple-update";
 import {
   SimpleUploadClientPhoto,
@@ -40,6 +44,7 @@ import * as React from "react";
 import { useTranslation } from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router-dom";
+import { DeleteMultiplePhoto } from "@learning/components/snippets/delete-multiple-photo";
 
 export const Home = (): JSX.Element => {
   const { t, i18n } = useTranslation();
@@ -272,7 +277,9 @@ export const Home = (): JSX.Element => {
       <Box marginTop={theme.spacing(1)} id={"crud-create"}>
         <Text variant={"h4"}>{t("CREATE")}</Text>
         <Code type="javascript">{SimplePost}</Code>
-        <Code type="javascript" caption={"nested-post"}>{NestedPost}</Code>
+        <Code type="javascript" caption={"nested-post"}>
+          {NestedPost}
+        </Code>
       </Box>
       <Box marginTop={theme.spacing(1)} id={"crud-update"}>
         <Text variant={"h4"}>{t("UPDATE")}</Text>
@@ -381,7 +388,7 @@ export const Home = (): JSX.Element => {
           await axios.delete('/d/img/sample.jpg')
         </Code>
         <Code type="javascript" caption={"Delete multiple photo from anywhere"}>
-          await axios.delete('/d/img/sample.jpg')
+          {DeleteMultiplePhoto}
         </Code>
       </Box>
       <Box marginTop={theme.spacing(1)} id={"send-email"}>
@@ -485,7 +492,7 @@ export const Home = (): JSX.Element => {
           </Code>
         </Box>
       </Box>
-      <Box marginTop={2}>
+      <Box marginTop={2} id="add-acl-by-uid">
         <Text variant={"h4"}>{t("ADD_ACL_BY_UID")}</Text>
         <Box>
           <Code caption={"add-acl-by-uid"} type={"javascript"}>
@@ -493,11 +500,19 @@ export const Home = (): JSX.Element => {
           </Code>
         </Box>
       </Box>
-      <Box marginTop={5}>
+      <Box marginTop={5} id="check-folder-acl">
         <Text variant={"h4"}>{t("CHECK_ALL_THE_ACLS_OF_FOLDER_ACL")}</Text>
         <Box>
           <Code caption={"add-acl-by-uid"} type={"javascript"}>
             /d/users?e&x
+          </Code>
+        </Box>
+      </Box>
+      <Box marginTop={5} id="folder-acl">
+        <Text variant={"h4"}>{t("FOLDER_ACL")}</Text>
+        <Box>
+          <Code caption={"setup/_settings/folderacls.xml"} type={"html"}>
+            {AddFilesToBeAccessibleEasily}
           </Code>
         </Box>
       </Box>

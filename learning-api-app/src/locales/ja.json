@@ -51,5 +51,7 @@
   "DELETE_PHOTO": "写真を削除する",
   "SIMPLE_SEARCH_FOR_PAGINATION": "ページネーションの簡単な検索",
   "ADD_ACL_BY_UID": "uidでaclを追加",
-"CHECK_ALL_THE_ACLS_OF_FOLDER_ACL": "フォルダaclsのすべてのACLを確認してください"
+  "CHECK_ALL_THE_ACLS_OF_FOLDER_ACL": "フォルダaclsのすべてのACLを確認してください",
+  "CHECK_FOLDER_ACL": "フォルダACLを確認してください",
+  "FOLDER_ACL": "フォルダACL"
 }

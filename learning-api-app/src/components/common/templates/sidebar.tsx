@@ -352,6 +352,9 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
             {t("BASIC")}
           </SubArticle>
           <SubArticle href={"#user-admin"}>{t("USER_ADMIN")}</SubArticle>
+          <SubArticle href={"#add-acl-by-uid"}>{t("ADD_ACL_BY_UID")}</SubArticle>
+          <SubArticle href={"#check-folder-acl"}>{t("CHECK_FOLDER_ACL")}</SubArticle>
+          <SubArticle href={"#folder-acl"}>{t("FOLDER_ACL")}</SubArticle>
         </>
       ) : (
         <></>
