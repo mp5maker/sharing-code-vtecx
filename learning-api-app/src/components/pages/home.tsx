@@ -8,7 +8,8 @@ import { useTheme } from "@learning/components/hooks/useTheme";
 import {
   AddUserByAdmin,
   OneWayToLogin,
-  UserAdmin
+  UserAdmin,
+  AddAclByUid,
 } from "@learning/components/snippets/access-control-list.tsx";
 import {
   SimpleBigQueryDelete,
@@ -452,34 +453,42 @@ export const Home = (): JSX.Element => {
 
   const AccessControlListContent = (
     <Box id={"access-control-list"} marginTop={5}>
-      <Text variant={"h4"}>{t("ACCESS_CONTROL_LIST")}</Text>
       <Box>
-        <Code caption={"who-am-i"}>http://localhost:8000/d/?_whoami&x&f</Code>
-        <Code caption={"uid"}>http://localhost:8000/d/?_uid&x&f</Code>
-        <Code caption={"account"}>http://localhost:8000/d/?_account&x&f</Code>
-        <Code caption={"log-out"}>http://localhost:8000/d/?_logout</Code>
-        <Code caption={"log-in-for-native-devices"} type="javascript">
-          {OneWayToLogin}
-        </Code>
-        <Code caption={"get-service"}>
-          http://localhost:8000/d/?_service?x&f
-        </Code>
+        <Text variant={"h4"}>{t("ACCESS_CONTROL_LIST")}</Text>
+        <Box>
+          <Code caption={"who-am-i"}>http://localhost:8000/d/?_whoami&x&f</Code>
+          <Code caption={"uid"}>http://localhost:8000/d/?_uid&x&f</Code>
+          <Code caption={"account"}>http://localhost:8000/d/?_account&x&f</Code>
+          <Code caption={"log-out"}>http://localhost:8000/d/?_logout</Code>
+          <Code caption={"log-in-for-native-devices"} type="javascript">
+            {OneWayToLogin}
+          </Code>
+          <Code caption={"get-service"}>
+            http://localhost:8000/d/?_service?x&f
+          </Code>
+        </Box>
+        <Box id={"user-admin"} marginTop={2}>
+          <Text variant={"h4"}>{t("USER_ADMIN")}</Text>
+          <Text>
+            <ReactMarkdown
+              plugins={[]}
+              allowDangerousHtml
+              children={currentMarkdown.AddUserByAdmin}
+            />
+          </Text>
+          <Code caption={"add-user-by-admin"} type={"javascript"}>
+            {AddUserByAdmin}
+          </Code>
+          <Code caption={"user-admin"} type={"javascript"}>
+            {UserAdmin}
+          </Code>
+        </Box>
       </Box>
-      <Box id={"user-admin"} marginTop={2}>
-        <Text variant={"h4"}>{t("USER_ADMIN")}</Text>
-        <Text>
-          <ReactMarkdown
-            plugins={[]}
-            allowDangerousHtml
-            children={currentMarkdown.AddUserByAdmin}
-          />
-        </Text>
-        <Code caption={"add-user-by-admin"} type={"javascript"}>
-          {AddUserByAdmin}
-        </Code>
-        <Code caption={"user-admin"} type={"javascript"}>
-          {UserAdmin}
-        </Code>
+      <Box marginTop={2}>
+        <Text variant={"h4"}>{t("ADD_ACL_BY_UID")}</Text>
+        <Box>
+          <Code caption={"add-acl-by-uid"} type={'javascript'}>{AddAclByUid}</Code>
+        </Box>
       </Box>
     </Box>
   );

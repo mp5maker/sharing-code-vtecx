@@ -49,5 +49,6 @@
   "BASIC": "Basic",
   "USER_ADMIN": "User Admin",
   "DELETE_PHOTO": "Delete Photo",
-  "SIMPLE_SEARCH_FOR_PAGINATION": "Simple Search For Pagination"
+  "SIMPLE_SEARCH_FOR_PAGINATION": "Simple Search For Pagination",
+  "ADD_ACL_BY_UID": "Add Acl by UID"
 }

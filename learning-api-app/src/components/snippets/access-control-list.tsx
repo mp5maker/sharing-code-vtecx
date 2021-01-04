@@ -21,7 +21,6 @@ const requestData = {
 axios.post("/d/?_adduserByAdmin", requestData);
 `;
 
-
 export const UserAdmin = `
 const is_user_admin_group = false // true or false (if you want to give useradmin privileges then use true)
 const uid = [uid from /d/?_adduserByAdmin]
@@ -49,9 +48,7 @@ axios.put(\`/d /\`, requestData)
     .catch(onErrorUserAdmin)
 `;
 
-
-export const OneWayToLogin =
-` const rxid = vtecxauth.getRXID(
+export const OneWayToLogin = ` const rxid = vtecxauth.getRXID(
     email,
     password,
     serviceName,
@@ -85,4 +82,37 @@ export const OneWayToLogin =
   apiHelper.me.auth({ rxid })
     .then(onSuccessGetCookie)
     .catch(() => {})
+`;
+
+export const AddAclByUid = `const uid = '69920'
+// C => create, R => React, U => Update, D => Delete
+const permissions = 'R'
+
+let reqdata = {
+	feed: {
+		entry: [
+			{
+				link: [
+					{
+						___rel: 'self',
+						___href: '/users'
+					}
+				],
+				contributor: [
+					{
+						uri: 'urn:vte.cx:acl:/_group/$admin,CRUD'
+					},
+					{
+						uri: 'urn:vte.cx:acl:/_group/$useradmin,CRUD/'
+					},
+					{
+						uri: \`urn:vte.cx:acl:\${uid},\${permissions}\`
+					}
+				]
+			}
+		]
+	}
+}
+
+axios.put('/d/?_post', reqdata)
 `;

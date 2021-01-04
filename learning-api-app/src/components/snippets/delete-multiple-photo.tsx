@@ -4,7 +4,7 @@ const request = [
       id: '?_delete',
       link: [
         {
-          ___href: '/_html/img/report_1603884471368_190.png',
+          ___href: '/_html/img/sample-1.png',
           ___rel: 'self'
         }
       ]
@@ -13,7 +13,7 @@ const request = [
       id: '?_delete',
       link: [
         {
-          ___href: '/_html/img/report_1603884471415_191.png',
+          ___href: '/_html/img/sample-2.png',
           ___rel: 'self'
         }
       ]
