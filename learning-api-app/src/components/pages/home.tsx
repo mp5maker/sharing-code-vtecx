@@ -1,7 +1,8 @@
 import { Body } from "@learning/components/common/body";
 import { Box } from "@learning/components/common/box";
 import { Code } from "@learning/components/common/code";
-import { Link } from "@learning/components/common/link";
+// import { Link } from "@learning/components/common/link";
+import Link from "@material-ui/core/Link";
 import { Picture } from "@learning/components/common/picture";
 import { Text } from "@learning/components/common/text";
 import { useTheme } from "@learning/components/hooks/useTheme";
@@ -385,7 +386,7 @@ export const Home = (): JSX.Element => {
           />
         </Text>
         <Code type="javascript" caption={"Delete photo from anywhere"}>
-          await axios.delete('/d/img/sample.jpg')
+          await axios.delete('/d/img/sample-[user-id-or-alloc-id-or-uid].jpg')
         </Code>
         <Code type="javascript" caption={"Delete multiple photo from anywhere"}>
           {DeleteMultiplePhoto}
