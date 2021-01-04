@@ -1,26 +1,36 @@
 import { Body } from "@learning/components/common/body";
 import { Box } from "@learning/components/common/box";
 import { Code } from "@learning/components/common/code";
-import { Link } from "@learning/components/common/Link";
-import { Picture } from "@learning/components/common/Picture";
+import { Link } from "@learning/components/common/link";
+import { Picture } from "@learning/components/common/picture";
 import { Text } from "@learning/components/common/text";
 import { useTheme } from "@learning/components/hooks/useTheme";
-import { AddUserByAdmin, OneWayToLogin, UserAdmin } from '@learning/components/snippets/access-control-list.tsx';
 import {
-  SimpleBigQueryDelete, SimpleBigQueryGet,
+  AddUserByAdmin,
+  OneWayToLogin,
+  UserAdmin
+} from "@learning/components/snippets/access-control-list.tsx";
+import {
+  SimpleBigQueryDelete,
+  SimpleBigQueryGet,
   SimpleBigQueryPost,
   SimpleBigQueryPut
 } from "@learning/components/snippets/big-query";
 import { FolderAcls } from "@learning/components/snippets/folder-acls";
-import { PropertiesEmail, PropertiesXML } from "@learning/components/snippets/properties";
-import { Report } from '@learning/components/snippets/report';
-import { SendEmail } from '@learning/components/snippets/send-email';
+import {
+  PropertiesEmail,
+  PropertiesXML
+} from "@learning/components/snippets/properties";
+import { Report } from "@learning/components/snippets/report";
+import { SendEmail } from "@learning/components/snippets/send-email";
 import { SimpleDelete } from "@learning/components/snippets/simple-delete";
 import { SimplePost } from "@learning/components/snippets/simple-post";
 import { SimpleUpdate } from "@learning/components/snippets/simple-update";
 import {
-  SimpleUploadClientPhoto, SimpleUploadServerPhoto
+  SimpleUploadClientPhoto,
+  SimpleUploadServerPhoto
 } from "@learning/components/snippets/simple-upload-photo";
+import { FullTextSearchTemplate } from "@learning/components/snippets/template-xml";
 import { SSRHtml } from "@learning/components/snippets/ssr-html";
 import { SSRPDF } from "@learning/components/snippets/ssr-pdf";
 import * as Markdowns from "@learning/markdowns";
@@ -304,6 +314,15 @@ export const Home = (): JSX.Element => {
         <Code type={"javascript"}>
           {"axios.get(`/d/users?f&n=${page}&l=${PAGE_SIZE}&s=${SORT}`)"}
         </Code>
+        <Text variant={"body2"}>{t("SIMPLE_SEARCH_FOR_PAGINATION")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.SetupForSearch}
+          />
+        </Text>
+        <Code type={"javascript"}>{FullTextSearchTemplate}</Code>
       </Box>
     </Box>
   );
@@ -347,15 +366,29 @@ export const Home = (): JSX.Element => {
           {SimpleUploadClientPhoto}
         </Code>
       </Box>
+      <Box marginTop={theme.spacing(1)} id={"simple-delete-photo"}>
+        <Text variant={"h4"}>{t("DELETE_PHOTO")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.DeletePhoto}
+          />
+        </Text>
+        <Code type="javascript" caption={"Delete photo from anywhere"}>
+          await axios.delete('/d/img/sample.jpg')
+        </Code>
+        <Code type="javascript" caption={"Delete multiple photo from anywhere"}>
+          await axios.delete('/d/img/sample.jpg')
+        </Code>
+      </Box>
       <Box marginTop={theme.spacing(1)} id={"send-email"}>
         <Text variant={"h4"}>{t("SEND_EMAIL")}</Text>
         <Code type="javascript" caption={"src/server/send-email.tsx"}>
           {SendEmail}
         </Code>
-        <Code>
-          axios.get("/s/send-email")
-        </Code>
-        <Code caption={'setup/_settings/properties.xml'}>
+        <Code>axios.get("/s/send-email")</Code>
+        <Code caption={"setup/_settings/properties.xml"}>
           {PropertiesEmail}
         </Code>
       </Box>
@@ -364,9 +397,7 @@ export const Home = (): JSX.Element => {
         <Code type="javascript" caption={"src/server/ssr.pdf.tsx"}>
           {SSRPDF}
         </Code>
-        <Code>
-          axios.get("/s/ssr.pdf?firstName=John&lastName=Doe")
-        </Code>
+        <Code>axios.get("/s/ssr.pdf?firstName=John&lastName=Doe")</Code>
       </Box>
     </Box>
   );
@@ -398,8 +429,10 @@ export const Home = (): JSX.Element => {
           {SimpleBigQueryDelete}
         </Code>
       </Box>
-      <Box id ={"big-query-report"}>
-        <Code type="javascript" caption="src/server/generate-report.tsx">{Report}</Code>
+      <Box id={"big-query-report"}>
+        <Code type="javascript" caption="src/server/generate-report.tsx">
+          {Report}
+        </Code>
         <Code type="javascript">
           axios.get("/s/generate-report?type=yoga_gender")
         </Code>
@@ -421,25 +454,33 @@ export const Home = (): JSX.Element => {
     <Box id={"access-control-list"} marginTop={5}>
       <Text variant={"h4"}>{t("ACCESS_CONTROL_LIST")}</Text>
       <Box>
-        <Code caption={'who-am-i'}>http://localhost:8000/d/?_whoami&x&f</Code>
-        <Code caption={'uid'}>http://localhost:8000/d/?_uid&x&f</Code>
-        <Code caption={'account'}>http://localhost:8000/d/?_account&x&f</Code>
-        <Code caption={'log-out'}>http://localhost:8000/d/?_logout</Code>
-        <Code caption={'log-in-for-native-devices'}
-          type="javascript">{OneWayToLogin}</Code>
+        <Code caption={"who-am-i"}>http://localhost:8000/d/?_whoami&x&f</Code>
+        <Code caption={"uid"}>http://localhost:8000/d/?_uid&x&f</Code>
+        <Code caption={"account"}>http://localhost:8000/d/?_account&x&f</Code>
+        <Code caption={"log-out"}>http://localhost:8000/d/?_logout</Code>
+        <Code caption={"log-in-for-native-devices"} type="javascript">
+          {OneWayToLogin}
+        </Code>
+        <Code caption={"get-service"}>
+          http://localhost:8000/d/?_service?x&f
+        </Code>
       </Box>
-        <Box id={'user-admin'} marginTop={2}>
-          <Text variant={"h4"}>{t('USER_ADMIN')}</Text>
-          <Text>
-            <ReactMarkdown
-              plugins={[]}
-              allowDangerousHtml
-              children={currentMarkdown.AddUserByAdmin}
-            />
-            </Text>
-          <Code caption={'add-user-by-admin'} type={'javascript'}>{AddUserByAdmin}</Code>
-          <Code caption={'user-admin'} type={'javascript'}>{UserAdmin}</Code>
-        </Box>
+      <Box id={"user-admin"} marginTop={2}>
+        <Text variant={"h4"}>{t("USER_ADMIN")}</Text>
+        <Text>
+          <ReactMarkdown
+            plugins={[]}
+            allowDangerousHtml
+            children={currentMarkdown.AddUserByAdmin}
+          />
+        </Text>
+        <Code caption={"add-user-by-admin"} type={"javascript"}>
+          {AddUserByAdmin}
+        </Code>
+        <Code caption={"user-admin"} type={"javascript"}>
+          {UserAdmin}
+        </Code>
+      </Box>
     </Box>
   );
 
@@ -485,7 +526,7 @@ export const Home = (): JSX.Element => {
         </Link>
       </Box>
       <Box marginTop={2}>
-        <Text>{t('BIG_QUERY')}</Text>
+        <Text>{t("BIG_QUERY")}</Text>
         <Link
           target={"__blank"}
           variant={"body1"}

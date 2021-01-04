@@ -36,7 +36,8 @@ export const Body: React.FC<BodyPropsInterface> = ({
             minHeight: 60,
             padding: theme.spacing.small,
             backgroundColor: theme.palette.background.paper,
-            color: theme.palette.text.secondary
+            color: theme.palette.text.secondary,
+            boxShadow: theme.shadows[1]
           }}
           position={"sticky"}
         >

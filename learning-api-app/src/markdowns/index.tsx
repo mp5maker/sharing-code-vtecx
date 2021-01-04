@@ -36,6 +36,10 @@ import ENGLISH_BIG_QUERY_INTRO from "@learning/markdowns/en/big-query-intro.md"
 import ENGLISH_BIG_QUERY_SUMMARY from "@learning/markdowns/en/big-query-summary.md"
 // @ts-ignore
 import ENGLISH_ADD_USER_BY_ADMIN from "@learning/markdowns/en/add-user-by-admin.md"
+// @ts-ignore
+import ENGLISH_DELETE_PHOTO from "@learning/markdowns/en/delete-photo.md"
+// @ts-ignore
+import ENGLISH_SETUP_FOR_SEARCH from "@learning/markdowns/en/setup-for-search.md"
 
 export default {
   en: {
@@ -57,7 +61,9 @@ export default {
     UploadPhoto: ENGLISH_UPLOAD_PHOTO,
     BigQueryIntro: ENGLISH_BIG_QUERY_INTRO,
     BigQuerySummary: ENGLISH_BIG_QUERY_SUMMARY,
-    AddUserByAdmin: ENGLISH_ADD_USER_BY_ADMIN
+    AddUserByAdmin: ENGLISH_ADD_USER_BY_ADMIN,
+    DeletePhoto: ENGLISH_DELETE_PHOTO,
+    SetupForSearch: ENGLISH_SETUP_FOR_SEARCH
   },
   ja: {
     GettingStarted: ENGLISH_GETTING_STARTED,
@@ -78,6 +84,8 @@ export default {
     UploadPhoto: ENGLISH_UPLOAD_PHOTO,
     BigQueryIntro: ENGLISH_BIG_QUERY_INTRO,
     BigQuerySummary: ENGLISH_BIG_QUERY_SUMMARY,
-    AddUserByAdmin: ENGLISH_ADD_USER_BY_ADMIN
+    AddUserByAdmin: ENGLISH_ADD_USER_BY_ADMIN,
+    DeletePhoto: ENGLISH_DELETE_PHOTO,
+    SetupForSearch: ENGLISH_SETUP_FOR_SEARCH
   }
 };

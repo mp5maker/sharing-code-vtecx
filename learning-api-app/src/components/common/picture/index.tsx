@@ -29,7 +29,6 @@ export const Picture: React.FC<ImagePropsInterface> = ({
     <>
       <Box
         style={{
-          display: 'none',
           backgroundColor: "transparent"
         }}
       >

@@ -1,0 +1,1 @@
+To delete an image you need to send a <mark>delete</mark> request with image URL endpoint
