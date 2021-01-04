@@ -1,9 +1,10 @@
-import * as React from "react";
-import { useTheme } from "@learning/components/hooks/useTheme";
 import { Box } from "@learning/components/common/box";
 import { Link, LinkPropsInterface } from "@learning/components/common/Link";
-import { useTranslation } from "react-i18next";
 import { Search } from "@learning/components/common/search";
+import { useTheme } from "@learning/components/hooks/useTheme";
+import get from "lodash/get";
+import * as React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Section: React.FC<{}> = ({ children, ...props }): JSX.Element => {
   const { theme }: any = useTheme();
@@ -81,12 +82,41 @@ export const SubArticle: React.FC<LinkPropsInterface> = ({
 };
 
 const ARTICLES: any = {
-  fundamentals: false,
-  creatingAnApi: false,
-  performCrud: false,
-  additionalResources: false,
-  serverSide: false,
-  bigQuery: false
+  fundamentals: {
+    active: false,
+    show: true,
+    keywords: ["fundamentals"]
+  },
+  creatingAnApi: {
+    active: false,
+    show: true,
+    keywords: ["creating an api"]
+  },
+  performCrud: {
+    active: false,
+    show: true,
+    keywords: ["perform crud"]
+  },
+  serverSide: {
+    active: false,
+    show: true,
+    keywords: ["server side"]
+  },
+  bigQuery: {
+    active: false,
+    show: true,
+    keywords: ["big query"]
+  },
+  accessControlList: {
+    active: false,
+    show: true,
+    keywords: ["access control list"]
+  },
+  additionalResources: {
+    active: false,
+    show: true,
+    keywords: ["additional resources"]
+  }
 };
 
 interface SidebarPropsInterface {}
@@ -95,10 +125,78 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const { theme } = useTheme();
   const { t } = useTranslation();
 
-  const [showSubArticles, setShowSubArticles] = React.useState<any>({
+  const [articles, setArticles] = React.useState<any>({
     ...ARTICLES,
-    fundamentals: true
+    fundamentals: {
+      active: true,
+      show: true
+    }
   });
+
+  const setActive = ({ state }: { state: string }) => {
+    const articleKeys = Object.keys(ARTICLES);
+    setArticles({
+      ...articleKeys.reduce((prepare, item) => {
+        return {
+          ...prepare,
+          [item]: {
+            ...articles[item],
+            active: false
+          }
+        };
+      }, {}),
+      [state]: {
+        ...articles[state],
+        active: true
+      }
+    });
+  };
+
+  const onSearch = (event: React.FormEvent<HTMLInputElement>) => {
+    const value = get(event, "target.value", "");
+    const articleKeys = Object.keys(ARTICLES);
+    let findKeys: Array<string> = [];
+    articleKeys.forEach(item => {
+      const keywords = ARTICLES[item].keywords;
+      keywords.forEach((eachKeyword: string) => {
+        if (eachKeyword.toLowerCase().indexOf(value.toLowerCase()) > -1) {
+          console.log(eachKeyword);
+          if (!findKeys.includes(item)) findKeys.push(item);
+        }
+      });
+    });
+    const isArray = Array.isArray(findKeys);
+    const isArrayLengthOne = isArray && findKeys.length == 1 ? true : false;
+
+    if (isArrayLengthOne) {
+      return setArticles({
+        ...articleKeys.reduce((prepare, item) => {
+          return {
+            ...prepare,
+            [item]: {
+              ...articles[item],
+              show: false
+            }
+          };
+        }, {}),
+        [findKeys[0]]: {
+          show: true
+        }
+      });
+    }
+
+    setArticles({
+      ...articleKeys.reduce((prepare, item) => {
+        return {
+          ...prepare,
+          [item]: {
+            ...articles[item],
+            show: true
+          },
+        };
+      }, {})
+    });
+  };
 
   const SearchContent = (
     <Box
@@ -113,9 +211,7 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
         name={"search"}
         autoComplete={"off"}
         placeholder={t("SEARCH")}
-        onChange={(event: any) => {
-          console.log(event);
-        }}
+        onChange={onSearch}
       />
     </Box>
   );
@@ -123,18 +219,13 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const FundamentalsContent = (
     <Section>
       <Article
-        onClick={() =>
-          setShowSubArticles({
-            ...ARTICLES,
-            fundamentals: !showSubArticles.fundamentals
-          })
-        }
-        isActive={showSubArticles.fundamentals}
+        onClick={() => setActive({ state: "fundamentals" })}
+        isActive={articles.fundamentals.active}
         href={"#fundamentals"}
       >
         {t("FUNDAMENTALS")}
       </Article>
-      {showSubArticles.fundamentals ? (
+      {articles.fundamentals.active ? (
         <>
           <SubArticle href={"#getting-started"}>
             {t("GETTING_STARTED")}
@@ -163,18 +254,13 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const CreatingAnApiContent = (
     <Section>
       <Article
-        onClick={() =>
-          setShowSubArticles({
-            ...ARTICLES,
-            creatingAnApi: !showSubArticles.creatingAnApi
-          })
-        }
-        isActive={showSubArticles.creatingAnApi}
+        onClick={() => setActive({ state: "creatingAnApi" })}
+        isActive={articles.creatingAnApi.active}
         href={"#creating-an-api"}
       >
         {t("CREATING_AN_API")}
       </Article>
-      {showSubArticles.creatingAnApi ? (
+      {articles.creatingAnApi.active ? (
         <>
           <SubArticle href={"#create-schema"}>{t("CREATE_SCHEMA")}</SubArticle>
           <SubArticle href={"#create-an-api-summary"}>
@@ -190,18 +276,13 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const PerformCrudContent = (
     <Section>
       <Article
-        onClick={() =>
-          setShowSubArticles({
-            ...ARTICLES,
-            performCrud: !showSubArticles.performCrud
-          })
-        }
-        isActive={showSubArticles.performCrud}
+        onClick={() => setActive({ state: "performCrud" })}
+        isActive={articles.performCrud.active}
         href={"#perform-crud"}
       >
         {t("PERFORM_CRUD")}
       </Article>
-      {showSubArticles.performCrud ? (
+      {articles.performCrud.active ? (
         <>
           <SubArticle href={"#crud-create"}>{t("CREATE")}</SubArticle>
           <SubArticle href={"#crud-update"}>{t("UPDATE")}</SubArticle>
@@ -217,26 +298,19 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const ServerSideContent = (
     <Section>
       <Article
-        onClick={() =>
-          setShowSubArticles({
-            ...ARTICLES,
-            serverSide: !showSubArticles.serverSide
-          })
-        }
-        isActive={showSubArticles.serverSide}
+        onClick={() => setActive({ state: "serverSide" })}
+        isActive={articles.serverSide.active}
         href={"#server-side-javascript"}
       >
         {t("SERVER_SIDE_JAVASCRIPT")}
       </Article>
-      {showSubArticles.serverSide ? (
+      {articles.serverSide.active ? (
         <>
           <SubArticle href={"#server-side-basics"}>{t("BASICS")}</SubArticle>
           <SubArticle href={"#simple-upload-photo"}>
             {t("UPLOAD_PHOTO")}
           </SubArticle>
-          <SubArticle href={"#send-email"}>
-            {t("SEND_EMAIL")}
-          </SubArticle>
+          <SubArticle href={"#send-email"}>{t("SEND_EMAIL")}</SubArticle>
         </>
       ) : (
         <></>
@@ -247,18 +321,13 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const BigQueryContent = (
     <Section>
       <Article
-        onClick={() =>
-          setShowSubArticles({
-            ...ARTICLES,
-            bigQuery: !showSubArticles.bigQuery
-          })
-        }
-        isActive={showSubArticles.bigQuery}
+        onClick={() => setActive({ state: "bigQuery" })}
+        isActive={articles.bigQuery.active}
         href={"#big-query"}
       >
         {t("BIG_QUERY")}
       </Article>
-      {showSubArticles.bigQuery ? (
+      {articles.bigQuery.active ? (
         <>
           <SubArticle href={"#big-query-intro"}>{t("BIG_QUERY")}</SubArticle>
           <SubArticle href={"#big-query-summary"}>{t("SUMMARY")}</SubArticle>
@@ -272,20 +341,17 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const AccessControlListContent = (
     <Section>
       <Article
-        onClick={() =>
-          setShowSubArticles({
-            ...ARTICLES,
-            accessControlList: !showSubArticles.accessControlList
-          })
-        }
-        isActive={showSubArticles.accessControlList}
+        onClick={() => setActive({ state: "accessControlList" })}
+        isActive={articles.accessControlList.active}
         href={"#access-control-list"}
       >
         {t("ACCESS_CONTROL_LIST")}
       </Article>
-      {showSubArticles.accessControlList ? (
+      {articles.accessControlList.active ? (
         <>
-          <SubArticle href={"#access-control-list-description"}>{t("BASIC")}</SubArticle>
+          <SubArticle href={"#access-control-list-description"}>
+            {t("BASIC")}
+          </SubArticle>
           <SubArticle href={"#user-admin"}>{t("USER_ADMIN")}</SubArticle>
         </>
       ) : (
@@ -297,18 +363,13 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const AdditionalResourcesContent = (
     <Section>
       <Article
-        onClick={() =>
-          setShowSubArticles({
-            ...ARTICLES,
-            additionalResources: !showSubArticles.performCrud
-          })
-        }
-        isActive={showSubArticles.additionalResources}
+        onClick={() => setActive({ state: "additionalResources" })}
+        isActive={articles.additionalResources.active}
         href={"#additional-resources"}
       >
         {t("ADDITIONAL_RESOURCES")}
       </Article>
-      {showSubArticles.additionalResources ? (
+      {articles.additionalResources.active ? (
         <>
           <SubArticle href={"#medium-links"}>{t("MEDIUM_LINK")}</SubArticle>
         </>
@@ -321,13 +382,13 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   return (
     <>
       {SearchContent}
-      {FundamentalsContent}
-      {CreatingAnApiContent}
-      {PerformCrudContent}
-      {ServerSideContent}
-      {BigQueryContent}
-      {AccessControlListContent}
-      {AdditionalResourcesContent}
+      {articles.fundamentals.show && FundamentalsContent}
+      {articles.creatingAnApi.show && CreatingAnApiContent}
+      {articles.performCrud.show && PerformCrudContent}
+      {articles.serverSide.show && ServerSideContent}
+      {articles.bigQuery.show && BigQueryContent}
+      {articles.accessControlList.show && AccessControlListContent}
+      {articles.additionalResources && AdditionalResourcesContent}
       {children}
     </>
   );
