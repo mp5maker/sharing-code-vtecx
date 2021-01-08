@@ -48,24 +48,24 @@ vtecxapi.getRequest()  // whole user object
 ```
 <br /><br />
 
-Example of saving in bigquery
+Example of saving in BigQuery
 
 ```
-vtecxapi.postBQ(data, false) // save to to big query
+vtecxapi.postBQ(data, false) // save to to BigQuery
 ```
 <br /><br />
 
 Example of simple post
 
 ```
-vtecxapi.post(data, false) // save to to big query
+vtecxapi.post(data, false) // save to to BigQuery
 ```
 <br /><br />
 
-Example of updating in bigquery
+Example of updating in BigQuery
 
 ```
-vtecxapi.postBQ(data, false) // update to to big query
+vtecxapi.postBQ(data, false) // update to to BigQuery
 ```
 <br /><br />
 
@@ -102,7 +102,7 @@ Example of deleteEntry
     vtecxapi.deleteEntry(ID) // deletes the data from the database
 <br />
 
-Example of delete entry for Big Query
+Example of delete entry for BigQuery
 
 ```
 vtecxapi.deleteBQ([ID], false, { users: "users" });
