@@ -613,6 +613,16 @@ export const Home = (): JSX.Element => {
             ACL
           </Link>
         </Box>
+        <Box marginTop={2}>
+          <Text>{t("FAQ")}</Text>
+          <Link
+            target={"__blank"}
+            variant={"body1"}
+            href="https://docs-vtecx-bd.netlify.app/docs/"
+          >
+            FAQ
+          </Link>
+        </Box>
       </Box>
     </Box>
   );

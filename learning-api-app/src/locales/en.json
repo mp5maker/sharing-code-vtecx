@@ -53,5 +53,6 @@
   "ADD_ACL_BY_UID": "Add Acl by UID",
   "CHECK_ALL_THE_ACLS_OF_FOLDER_ACL": "Check all the acls of the folder acls",
   "CHECK_FOLDER_ACL": "Check Folder Acl",
-  "FOLDER_ACL": "Folder Acl"
+  "FOLDER_ACL": "Folder Acl",
+  "FAQ": "FAQ"
 }

@@ -53,5 +53,6 @@
   "ADD_ACL_BY_UID": "uidでaclを追加",
   "CHECK_ALL_THE_ACLS_OF_FOLDER_ACL": "フォルダaclsのすべてのACLを確認してください",
   "CHECK_FOLDER_ACL": "フォルダACLを確認してください",
-  "FOLDER_ACL": "フォルダACL"
+  "FOLDER_ACL": "フォルダACL",
+  "FAQ": "よくある質問"
 }
