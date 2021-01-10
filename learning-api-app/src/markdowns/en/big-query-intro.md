@@ -9,6 +9,7 @@ For the BigQuery integration, you need to have a google account. You need to get
 
 Next you should pin the data
 + Add Data -> Pin Data -> To the tab (All)
+Please check Fig: Pin Data
 
 After that you can query like an regular SQL to fetch the data. There are some differences regular database and SQL.
 

@@ -303,6 +303,10 @@ export const Home = (): JSX.Element => {
         <Code type={"javascript"}>axios.get('/d/users?f')</Code>
         <Text variant={"body2"}>{t("GET_SPECIFIC_DATA")}</Text>
         <Code type={"javascript"}>{"axios.get(`/d/users?f&id=${id}`)"}</Code>
+        <Text variant={"body2"}>
+          {t("IN_CASE_OF_ID_IT_IS_FASTER_TO_GET_IT_AS_FOLLOWS")}
+        </Text>
+        <Code type={"javascript"}>{`axios.get(\`/d/users/\${id}?e\`)`}</Code>
         <Text variant={"body2"}>{t("GET_DATA_BY_SCROLLING")}</Text>
         <Code type={"javascript"}>
           {"axios.get(`/d/users?f&l=${PAGE_SIZE}&p=${next}`)"}
@@ -388,6 +392,12 @@ export const Home = (): JSX.Element => {
         <Code type="javascript" caption={"Delete photo from anywhere"}>
           await axios.delete('/d/img/sample-[user-id-or-alloc-id-or-uid].jpg')
         </Code>
+        <Code type="javascript" caption={"Delete photo from anywhere"}>
+          await axios.delete('/d/_html/img/sample.jpg')
+        </Code>
+        <Code type="javascript" caption={"Delete photo from anywhere"}>
+          await axios.delete('/d/_html/img/sample.jpg)
+        </Code>
         <Code type="javascript" caption={"Delete multiple photo from anywhere"}>
           {DeleteMultiplePhoto}
         </Code>
@@ -423,6 +433,9 @@ export const Home = (): JSX.Element => {
             children={currentMarkdown.BigQueryIntro}
           />
         </Text>
+        <Box>
+          <Picture src={"img/big-query-pin.png"} />
+        </Box>
         <Code type={"bash"} caption={"setup/_settings/properties.xml"}>
           {PropertiesXML}
         </Code>
