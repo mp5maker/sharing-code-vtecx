@@ -374,6 +374,7 @@ export const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
       {articles.additionalResources.active ? (
         <>
           <SubArticle href={"#medium-links"}>{t("MEDIUM_LINK")}</SubArticle>
+          <SubArticle href={"#faq"}>{t("FAQ")}</SubArticle>
         </>
       ) : (
         <></>

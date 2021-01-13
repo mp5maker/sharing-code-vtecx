@@ -613,7 +613,7 @@ export const Home = (): JSX.Element => {
             ACL
           </Link>
         </Box>
-        <Box marginTop={2}>
+        <Box marginTop={2} id={"faq"}>
           <Text>{t("FAQ")}</Text>
           <Link
             target={"__blank"}
